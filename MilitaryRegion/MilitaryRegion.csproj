@@ -207,6 +207,11 @@
     <Compile Include="DAO\Repositories\CarbineRepository.cs" />
     <Compile Include="DAO\Repositories\CorpRepository.cs" />
     <Compile Include="DAO\Repositories\DepartmentRepository.cs" />
+    <Compile Include="DAO\Repositories\DislocationRepository.cs" />
+    <Compile Include="DAO\Repositories\DivisionRepository.cs" />
+    <Compile Include="DAO\Repositories\IFVRepository.cs" />
+    <Compile Include="DAO\Repositories\MachineryRepository.cs" />
+    <Compile Include="DAO\Repositories\MilitaryBaseRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

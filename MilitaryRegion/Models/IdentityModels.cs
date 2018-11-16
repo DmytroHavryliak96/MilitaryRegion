@@ -35,13 +35,13 @@ namespace MilitaryRegion.Models
         public DbSet<Corp> Corps { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Dislocation> Dislocations { get; set; }
-        public DbSet<Division> Division { get; set; }
+        public DbSet<Division> Divisions { get; set; }
         public DbSet<IFV> IFVs { get; set; }
         public DbSet<Machinery> Machineries { get; set; }
         public DbSet<MilitaryBase> MilitaryBases { get; set; }
         public DbSet<MilitaryBaseBuilding> MilitaryBaseBuildings { get; set; }
-        public DbSet<MilitaryBaseMachinery> MilitaryBaseachinery { get; set; }
-        public DbSet<MilitaryBaseWeaponry> MilitaryBaseWeaponry { get; set; }
+        public DbSet<MilitaryBaseMachinery> MilitaryBaseMachineries { get; set; }
+        public DbSet<MilitaryBaseWeaponry> MilitaryBaseWeaponries { get; set; }
         public DbSet<MissileArmament> MissileArmaments { get; set; }
         public DbSet<MotorTransport> MotorTransports { get; set; }
         public DbSet<Officer> Officers { get; set; }
