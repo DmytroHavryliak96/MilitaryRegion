@@ -48,7 +48,7 @@ namespace MilitaryRegion.Models
         public DbSet<Rank> Ranks { get; set; }
         public DbSet<Sergeant> Sergeants { get; set; }
         public DbSet<Serviceman> Servicemen { get; set; }
-        public DbSet<ServicemanSpecialty> ServicemanSpecialty { get; set; }
+        public DbSet<ServicemanSpecialty> ServicemanSpecialties { get; set; }
         public DbSet<Soldier> Soldiers { get; set; }
         public DbSet<Specialty> Specialties { get; set; }
         public DbSet<Squad> Squads { get; set; }

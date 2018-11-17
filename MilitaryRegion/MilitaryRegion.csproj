@@ -211,7 +211,23 @@
     <Compile Include="DAO\Repositories\DivisionRepository.cs" />
     <Compile Include="DAO\Repositories\IFVRepository.cs" />
     <Compile Include="DAO\Repositories\MachineryRepository.cs" />
+    <Compile Include="DAO\Repositories\MilitaryBaseBuildingRepository.cs" />
+    <Compile Include="DAO\Repositories\MilitaryBaseMachineryRepository.cs" />
     <Compile Include="DAO\Repositories\MilitaryBaseRepository.cs" />
+    <Compile Include="DAO\Repositories\MilitaryBaseWeaponryRepository.cs" />
+    <Compile Include="DAO\Repositories\MissileArmamentRepository.cs" />
+    <Compile Include="DAO\Repositories\MotorTransportRepository.cs" />
+    <Compile Include="DAO\Repositories\OfficerRepository.cs" />
+    <Compile Include="DAO\Repositories\RankRepository.cs" />
+    <Compile Include="DAO\Repositories\SergeantRepository.cs" />
+    <Compile Include="DAO\Repositories\ServicemanRepository.cs" />
+    <Compile Include="DAO\Repositories\ServicemanSpecialtyRepository.cs" />
+    <Compile Include="DAO\Repositories\SoldierRepository.cs" />
+    <Compile Include="DAO\Repositories\SpecialtyRepository.cs" />
+    <Compile Include="DAO\Repositories\SquadRepository.cs" />
+    <Compile Include="DAO\Repositories\TractorRepository.cs" />
+    <Compile Include="DAO\Repositories\TroopRepository.cs" />
+    <Compile Include="DAO\Repositories\WeaponryRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

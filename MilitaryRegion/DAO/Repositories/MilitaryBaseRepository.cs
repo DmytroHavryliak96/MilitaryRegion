@@ -23,27 +23,37 @@ namespace MilitaryRegion.DAO.Repositories
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            MilitaryBase mBase = db.MilitaryBases.Find(id);
+
+            if (mBase != null)
+            {
+                db.MilitaryBases.Remove(mBase);
+            };
         }
 
         public IEnumerable<MilitaryBase> Find(Func<MilitaryBase, bool> predicate)
         {
-            throw new NotImplementedException();
+            return db.MilitaryBases.Where(predicate).ToList();
         }
 
         public MilitaryBase Get(int id)
         {
-            throw new NotImplementedException();
+            return db.MilitaryBases.Find(id);
         }
 
         public IEnumerable<MilitaryBase> GetAll()
         {
-            throw new NotImplementedException();
+            return db.MilitaryBases;
         }
 
         public void Update(MilitaryBase item)
         {
-            throw new NotImplementedException();
+            MilitaryBase dbEntry = db.MilitaryBases.Find(item.Id);
+            if (dbEntry != null)
+            {
+                dbEntry.Name = item.Name;
+                dbEntry.Number = item.Number;
+            }
         }
     }
 }
