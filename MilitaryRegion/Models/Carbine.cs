@@ -10,8 +10,8 @@ namespace MilitaryRegion.Models
     {
         // id
         public int Id { get; set; }
-        // час перезарядки, сек
-        public double RechargeTime { get; set; }
+        // довжина, мм
+        public double Length { get; set; }
         // id озброєння
         public int WeaponryId { get; set; }
         public Weaponry Weaponry { get; set; }

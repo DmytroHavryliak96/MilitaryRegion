@@ -50,7 +50,7 @@ namespace MilitaryRegion.DAO.Repositories
             Carbine dbEntry = db.Carbines.Find(item.Id);
             if (dbEntry != null)
             {
-                dbEntry.RechargeTime = item.RechargeTime;
+                dbEntry.Length = item.Length;
             }
         }
     }

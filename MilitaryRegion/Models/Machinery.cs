@@ -15,7 +15,7 @@ namespace MilitaryRegion.Models
         // модель техніки
         public string Model { get; set; }
         // вага, тонни
-        public float Weight { get; set; }
+        public double Weight { get; set; }
         // кількість екіпажу
         public int CrewAmount { get; set; }
 
