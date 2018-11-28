@@ -10,7 +10,7 @@ namespace MilitaryRegion.Models
     {
         // id
         public int Id { get; set; }
-        // дальність пострілу
+        // дальність пострілу, km
         public double ShootingRange { get; set; }
         // id озброєння
         public int WeaponryId { get; set; }

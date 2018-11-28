@@ -10,7 +10,7 @@ namespace MilitaryRegion.Models
     {
         // ід
         public int Id { get; set; }
-        // швидкість снаряду
+        // швидкість снаряду, m/s
         public double ShellSpeed { get; set; }
         // ід озброєння
         public int WeaponryId { get; set; }
