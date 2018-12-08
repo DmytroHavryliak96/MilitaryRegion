@@ -84,29 +84,23 @@ namespace MilitaryRegion.BL.Services
             return result;
         }
 
-       /* public IEnumerable<OfficerViewModel> GetRankOfficers()
+        public string GetCurrentRank(int rank)
         {
-            throw new NotImplementedException();
+            if (rank == 0)
+                return "увесь склад";
+            return "звання = " + Database.Ranks.Get(rank).Name;
         }
 
-        public IEnumerable<OfficerViewModel> GetRankOfficersArmy(int armyId)
+        public IEnumerable<OfficerViewModel> GetOfficersOfBases(int baseId, int rankId)
         {
-            throw new NotImplementedException();
+            var models = GetAllOfficers(rankId);
+            var result = models.Where(o => o.MilitaryBaseId == baseId);
+            return result;
         }
 
-        public IEnumerable<OfficerViewModel> GetRankOfficersCorp(int corpId)
+        public IEnumerable<MilitaryBase> GetAllMilitaryBases()
         {
-            throw new NotImplementedException();
+            return Database.MilitaryBases.GetAll();
         }
-
-        public IEnumerable<OfficerViewModel> GetRankOfficersDivision(int divisionId)
-        {
-            throw new NotImplementedException();
-        }*/
-
-        /*IEnumerable<Rank> IManageOfficers.GetAllRanks()
-        {
-            throw new NotImplementedException();
-        }*/
     }
 }

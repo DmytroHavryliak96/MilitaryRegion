@@ -22,18 +22,6 @@ namespace MilitaryRegion.BL.Services.Mappers
 
             var officerViewModel = new OfficerViewModel
             {
-                ArmyNumber = army.Number,
-                ArmyId = army.Id,
-
-                CorpusNumber = corp.Number,
-                CorpusId = corp.Id,
-
-                DivisionName = division.Name,
-                DivisionId = division.Id,
-
-                MilitaryBaseName = militaryBase.Name,
-                MilitaryBaseId = militaryBase.Id,
-
                 ServicemanId = serviceMan.Id,
                 Name = serviceMan.FirstName + " " + serviceMan.SecondName,
 
@@ -44,6 +32,30 @@ namespace MilitaryRegion.BL.Services.Mappers
                 OfficerRankDate = baseModel.OfficerRankDate
             };
 
+            if (army != null)
+            {
+                officerViewModel.ArmyId = army.Id;
+                officerViewModel.ArmyNumber = army.Number;
+            }
+
+            if (corp != null)
+            {
+                officerViewModel.CorpusId = corp.Id;
+                officerViewModel.CorpusNumber = corp.Number;
+            }
+      
+            if (division != null)
+            {
+                officerViewModel.DivisionId = division.Id;
+                officerViewModel.DivisionName = division.Name;
+            }
+
+            if (militaryBase != null)
+            {
+                officerViewModel.MilitaryBaseId = militaryBase.Id;
+                officerViewModel.MilitaryBaseName = militaryBase.Name;
+            }
+         
             return officerViewModel;
         }
     }

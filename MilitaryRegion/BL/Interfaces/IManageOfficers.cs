@@ -20,13 +20,8 @@ namespace MilitaryRegion.BL.Interfaces
 
         IEnumerable<OfficerViewModel> GetOfficersOfDivision(int divisionId, int rankId);
 
-       /* IEnumerable<OfficerViewModel> GetRankOfficers();
+        IEnumerable<OfficerViewModel> GetOfficersOfBases(int baseId, int rankId);
 
-        IEnumerable<OfficerViewModel> GetRankOfficersArmy(int armyId);
-
-        IEnumerable<OfficerViewModel> GetRankOfficersCorp(int corpId);
-
-        IEnumerable<OfficerViewModel> GetRankOfficersDivision(int divisionId);*/
 
         IEnumerable<Army> GetAllArmies();
 
@@ -34,7 +29,11 @@ namespace MilitaryRegion.BL.Interfaces
 
         IEnumerable<Division> GetAllDivisions();
 
+        IEnumerable<MilitaryBase> GetAllMilitaryBases();
+
         IEnumerable<Rank> GetOfficersRanks();
+
+        string GetCurrentRank(int rank);
 
 
     }

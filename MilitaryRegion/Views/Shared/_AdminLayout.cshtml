@@ -22,17 +22,17 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="@Url.Action("Index", "Admin")">Домашня сторінка</a></li>
                 <li><a href="@Url.Action("ManageMilitaryBases", "Admin")">Військові частини</a></li>
-                <li><a href="@Url.Action("Index", "ManageOfficers")">Офіцери</a></li>
-                <li><a href="@Url.Action("Index", "ManageNetworks")">Створені мережі</a></li>
-                <li><a href="@Url.Action("Index", "ManageTestNetworks")">Тестові мережі</a></li>
+                <li><a href="@Url.Action("Index", "Officers")">Офіцери</a></li>
+                <li><a href="@Url.Action("Index", "Sergeants")">Сержанти</a></li>
+                <li><a href="@Url.Action("Index", "Soldiers")">Рядові</a></li>
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Меню<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
             <ul id="nav-mobile" class="sidenav">
                 <li><a href="@Url.Action("Index", "Admin")">Домашня сторінка</a></li>
                 <li><a href="@Url.Action("ManageMilitaryBases", "Admin")">Військові частини</a></li>
-                <li><a href="@Url.Action("Index", "ManageOfficers")">Офіцери</a></li>
-                <li><a href="@Url.Action("Index", "ManageNetworks")">Створені мережі</a></li>
-                <li><a href="@Url.Action("Index", "ManageTestNetworks")">Тестові мережі</a></li>
+                <li><a href="@Url.Action("Index", "Officers")">Офіцери</a></li>
+                <li><a href="@Url.Action("Index", "Sergeants")">Сержанти</a></li>
+                <li><a href="@Url.Action("Index", "Soldiers")">Рядові</a></li>
                 <li><a href="@Url.Action("ManageTypes", "ManageNetworks")">Типи мереж</a></li>
                 <li><a href="@Url.Action("ManageNeuralNetworks", "ManageNetworks")">Доступні мережі</a></li>
             </ul>
@@ -64,9 +64,9 @@
                 <div class="col l6 s12">
                     <h5 class="white-text">Корисні посилання</h5>
                     <ul>
-                        <li><a class="white-text" href="@Url.Action("EditUser", "Admin", new { userId = User.Identity.GetUserId()})">1. Редагувати персональні дані</a></li>
-                        <li><a class="white-text" href="@Url.Action("ManageData", "ManageTasks", new {tablename = "Kerogens" })">2. Менеджмент вхідних даних задачі про кероген</a></li>
-                        <li><a class="white-text" href="@Url.Action("ManageData", "ManageTasks", new {tablename = "Layers"})">3. Менеджмент вхідних даних задачі про пласт</a></li>
+                        <li><a class="white-text" href="@Url.Action("EditUser", "Admin", new { userId = User.Identity.GetUserId()})">1. Переглянути всіх військовослужбовців військового регіону</a></li>
+                        <li><a class="white-text" href="@Url.Action("ManageData", "ManageTasks", new {tablename = "Kerogens" })">2. Переглянути офіцерський склад</a></li>
+                        <li><a class="white-text" href="@Url.Action("ManageData", "ManageTasks", new {tablename = "Layers"})">3. Переглянути сержантський склад</a></li>
                     </ul>
                 </div>
             </div>

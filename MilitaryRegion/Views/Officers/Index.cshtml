@@ -6,39 +6,43 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h3 class="center">Менеджмент військових частин</h3>
+<h3 class="center">Менеджмент офіцерів : @ViewBag.CurrentRank</h3>
 <div class="row">
     <div class="col s8 offset-s2">
         <table class="highlight">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Serviceman ID</th>
                     <th>Name</th>
-                    <th>Number</th>
-                    <th>City</th>
+                    <th>Date Of Birth</th>
+                    <th>Rank</th>
+                    <th>Academic Completion Date</th>
+                    <th>Officer Rank Date</th>
                     <th>Army Number</th>
                     <th>Corpus Number</th>
                     <th>Division Name</th>
-                    <th>Commander</th>
+                    <th>Military Base Name</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
             {
                     <tr>
-                        <td>@item.Id</td>
-                        <td>@Html.ActionLink(item.Name, "EditUser", new { baseId = item.Id })</td>
-                        <td>@item.Number</td>
-                        <td>@item.City</td>
+                        <td>@item.ServicemanId</td>
+                        <td>@item.Name</td>
+                        <td>@item.DateOfBirth</td>
+                        <td>@item.RankName</td>
+                        <td>@item.AcademicCompletionDate</td>
+                        <td>@item.OfficerRankDate</td>
                         <td>@item.ArmyNumber</td>
                         <td>@item.CorpusNumber</td>
                         <td>@item.DivisionName</td>
-                        <td>@item.Commander</td>
+                        <td>@item.MilitaryBaseName</td>
 
                         <td>
                             @using (Html.BeginForm("DeleteMilitaryBase", "Admin"))
                             {
-                                @Html.Hidden("baseId", item.Id)
+                                @Html.Hidden("baseId", item.ServicemanId)
                                 <input type="submit" value="Видалити" class="waves-effect waves-light btn" />
                             }
                         </td>
@@ -49,36 +53,57 @@
         </table>
 
         <!-- Dropdown Trigger -->
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Відфільтрувати по арміях</a>
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Фільтр по арміях</a>
 
         <!-- Dropdown Structure -->
         <ul id='dropdown2' class='dropdown-content'>
             @foreach (var army in (ViewBag.Armies as List<Army>))
             {
-                <li><a href="@Url.Action("GetBasesOfArmy", "Admin", new { armyId = army.Id})">Army number = @army.Number</a></li>
+                <li><a href="@Url.Action("GetOfficersOfArmy", "Officers", new { armyId = army.Id})">Army number = @army.Number</a></li>
             }
         </ul>
 
 
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Відфільтрувати по корпусах</a>
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Фільтр по корпусах</a>
         <!-- Dropdown Structure -->
         <ul id='dropdown3' class='dropdown-content'>
             @foreach (var corp in (ViewBag.Corps as List<Corp>))
             {
-                <li><a href="@Url.Action("GetBasesOfCorp", "Admin", new { corpId = corp.Id})">Corp number = @corp.Number</a></li>
+                <li><a href="@Url.Action("GetOfficersOfCorp", "Officers", new { corpId = corp.Id})">Corp number = @corp.Number</a></li>
             }
         </ul>
 
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown4'>Відфільтрувати по дивізіях</a>
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown4'>Фільтр по дивізіях</a>
 
         <!-- Dropdown Structure -->
         <ul id='dropdown4' class='dropdown-content'>
             @foreach (var division in (ViewBag.Divisions as List<Division>))
             {
-                <li><a href="@Url.Action("GetBasesOfDivision", "Admin", new { divisionId = division.Id})">Division Name = @division.Name</a></li>
+                <li><a href="@Url.Action("GetOfficersOfDivision", "Officers", new { divisionId = division.Id})">Division Name = @division.Name</a></li>
             }
         </ul>
-        <a class='btn' href="@Url.Action("ManageMilitaryBases", "Admin")">Переглянути всі військові частини</a>
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown5'>Фільтр по частинах</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown5' class='dropdown-content'>
+            @foreach (var militaryBase in (ViewBag.Bases as List<MilitaryBase>))
+            {
+                <li><a href="@Url.Action("GetOfficersOfBase", "Officers", new { baseId = militaryBase.Id})">Military Base Name = @militaryBase.Name</a></li>
+            }
+        </ul>
+
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown6'>Фільтр по званнях</a>
+        
+        <!-- Dropdown Structure -->
+        <ul id='dropdown6' class='dropdown-content'>
+            @foreach (var rank in (ViewBag.Ranks as List<Rank>))
+            {
+                <li><a href="@Url.Action("GetRank", "Officers", new { rankId = rank.Id})">Rank Name = @rank.Name</a></li>
+            }
+        </ul>
+        <a class='btn' href="@Url.Action("Index", "Officers")">Весь склад</a>
 
 
 
