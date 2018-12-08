@@ -14,7 +14,7 @@ namespace MilitaryRegion.Models
         public int Number { get; set; }
 
         // id військової частини
-        public MilitaryBase MilitaryBaseId { get; set; }
+        public int MilitaryBaseId { get; set; }
         public MilitaryBase MilitaryBase { get; set; }
 
         // id командира роти

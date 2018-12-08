@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using MilitaryRegion.DAO.Repositories;
 using MilitaryRegion.DAO.Interfaces;
 using MilitaryRegion.Models;
+using System;
 
 namespace MilitaryRegion.Models
 {
@@ -65,18 +66,11 @@ namespace MilitaryRegion.Models
             return new ApplicationDbContext();
         }
 
+    }
+
         public class StoreDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
         {
-            /*private int GetNetworkId(string name, IRepository<NeuralNetwork> dbNetworks)
-            {
-                return dbNetworks.Find(net => net.Name.Equals(name)).FirstOrDefault().Id;
-            }
-
-            private int GetTaskId(string taskName, IRepository<TaskNetwork> dbTasks)
-            {
-                return dbTasks.Find(task => task.Name.Equals(taskName)).FirstOrDefault().Id;
-            }*/
-
+           
             protected override void Seed(ApplicationDbContext db)
             {
                 var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
@@ -102,6 +96,7 @@ namespace MilitaryRegion.Models
                         var result = UserManager.AddToRole(user.Id, "Admin");
                     }
 
+                    // армії
                     ArmyRepository dbArmies = new ArmyRepository(db);
                     Army[] armies = new Army[] {
                         new Army { Number = 1 },
@@ -115,6 +110,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // корпуси
                     CorpRepository dbCorps = new CorpRepository(db);
                     Corp[] corps = new Corp[] {
                         new Corp { Number = 1, ArmyId = 1 },
@@ -128,6 +124,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // дивізії
                     DivisionRepository dbDivisions = new DivisionRepository(db);
                     Division[] divisions = new Division[] {
                         new Division { Number = 1, CorpId =  1, Name = "Мотострілкова"},
@@ -141,6 +138,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // дислокації
                     DislocationRepository dbDislocations = new DislocationRepository(db);
                     Dislocation[] dislocations = new Dislocation[]
                     {
@@ -156,6 +154,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // звання
                     RankRepository dbRanks = new RankRepository(db);
                     Rank[] ranks = new Rank[]
                     {
@@ -177,6 +176,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // транспорт
                     MachineryRepository dbMachineries = new MachineryRepository(db);
                     Machinery[] machineries = new Machinery[]
                     {
@@ -194,6 +194,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // тягачі
                     TractorRepository dbTractors = new TractorRepository(db);
                     Tractor[] tractors = new Tractor[]
                     {
@@ -207,6 +208,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // БМП
                     IFVRepository dbIFVs = new IFVRepository(db);
                     IFV[] ifvs = new IFV[]
                     {
@@ -220,6 +222,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // автотранспорт
                     MotorTransportRepository dbMotors = new MotorTransportRepository(db);
                     MotorTransport[] motors = new MotorTransport[]
                     {
@@ -233,6 +236,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // озброєння
                     WeaponryRepository dbWeaponries = new WeaponryRepository(db);
                     Weaponry[] weapons = new Weaponry[]
                     {
@@ -253,6 +257,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // карабіни
                     CarbineRepository dbCarbines = new CarbineRepository(db);
                     Carbine[] carbines = new Carbine[]
                     {
@@ -266,6 +271,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // автоматична зброя
                     AutomaticRepository dbAutomatics = new AutomaticRepository(db);
                     Automatic[] automatics = new Automatic[]
                     {
@@ -279,6 +285,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // артилерія
                     ArtilleryRepository dbArtillery = new ArtilleryRepository(db);
                     Artillery[] artillery = new Artillery[]
                     {
@@ -292,6 +299,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // ракетне озброєння
                     MissileArmamentRepository dbArmament = new MissileArmamentRepository(db);
                     MissileArmament[] armaments = new MissileArmament[]
                     {
@@ -305,6 +313,7 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
+                    // воєнні частини
                     MilitaryBaseRepository dbMilitaryBases = new MilitaryBaseRepository(db);
                     MilitaryBase[] mBases = new MilitaryBase[]
                     {
@@ -319,127 +328,306 @@ namespace MilitaryRegion.Models
                         db.SaveChanges();
                     }
 
-
-
-
-
-
-
-
-
-                    /* const int kerogenAmount = 19;
-                     const int layerAmount = 15;
-                     const int typesAmount = 2;
-                     const int networkAmount = 2;
-
-                     KerogenRepository dbKerogens = new KerogenRepository(db);
-                     Kerogen[] kerogens = new Kerogen[kerogenAmount] {
-                     new Kerogen { Carbon = 0.765, Hydrogen = 0.1, Oxygen = 0.103, Nitrogen = 0.6, Sulfur = 0.026, Type = 1},
-                     new Kerogen { Carbon = 0.759, Hydrogen = 0.091, Oxygen = 0.084, Nitrogen = 0.039, Sulfur = 0.026, Type = 1},
-                     new Kerogen { Carbon = 0.809, Hydrogen = 0.086, Oxygen = 0.044, Nitrogen = 0.038, Sulfur = 0.023, Type = 1},
-                     new Kerogen { Carbon = 0.726, Hydrogen = 0.079, Oxygen = 0.124, Nitrogen = 0.021, Sulfur = 0.049, Type = 2},
-                     new Kerogen { Carbon = 0.854, Hydrogen = 0.079, Oxygen = 0.05, Nitrogen = 0.023, Sulfur = 0.002, Type = 2},
-                     new Kerogen { Carbon = 0.806, Hydrogen = 0.059, Oxygen = 0.064, Nitrogen = 0.034, Sulfur = 0.038, Type = 2},
-                     new Kerogen { Carbon = 0.727, Hydrogen = 0.06, Oxygen = 0.19, Nitrogen = 0.023, Sulfur = 0.0, Type = 3},
-                     new Kerogen { Carbon = 0.833, Hydrogen = 0.046, Oxygen = 0.095, Nitrogen = 0.021, Sulfur = 0.005, Type = 3},
-                     new Kerogen { Carbon = 0.916, Hydrogen = 0.032, Oxygen = 0.029, Nitrogen = 0.02, Sulfur = 0.003, Type = 3},
-                     new Kerogen { Carbon = 0.827, Hydrogen = 0.041, Oxygen = 0.083, Nitrogen = 0.017, Sulfur = 0.032, Type = 1},
-                     new Kerogen { Carbon = 0.854, Hydrogen = 0.035, Oxygen = 0.056, Nitrogen = 0.021, Sulfur = 0.033, Type = 2},
-                     new Kerogen { Carbon = 0.686, Hydrogen = 0.051, Oxygen = 0.212, Nitrogen = 0.026, Sulfur = 0.025, Type = 3},
-                     new Kerogen { Carbon = 0.775, Hydrogen = 0.108, Oxygen = 0.093, Nitrogen = 0.004, Sulfur = 0.02, Type = 1},
-                     new Kerogen { Carbon = 0.735, Hydrogen = 0.083, Oxygen = 0.18, Nitrogen = 0.026, Sulfur = 0.018, Type = 2},
-                     new Kerogen { Carbon = 0.883, Hydrogen = 0.05, Oxygen = 0.039, Nitrogen = 0.02, Sulfur = 0.008, Type = 3},
-                     new Kerogen { Carbon = 0.759, Hydrogen = 0.094, Oxygen = 0.088, Nitrogen = 0.021, Sulfur = 0.038, Type = 1},
-                     new Kerogen { Carbon = 0.693, Hydrogen = 0.083, Oxygen = 0.18, Nitrogen = 0.026, Sulfur = 0.018, Type = 2},
-                     new Kerogen { Carbon = 0.913, Hydrogen = 0.032, Oxygen = 0.032, Nitrogen = 0.018, Sulfur = 0.005, Type = 3},
-                     new Kerogen { Carbon = 0.822, Hydrogen = 0.099, Oxygen = 0.013, Nitrogen = 0.013, Sulfur = 0.025, Type = 1}
-                 };
-
-                     for (int i = 0; i < kerogenAmount; i++)
-                     {
-                         dbKerogens.Create(kerogens[i]);
-                         db.SaveChanges();
-                     }
-
-                     LayerRepository dbLayers = new LayerRepository(db);
-                     Layer[] layers = new Layer[layerAmount]
-                     {
-                     new Layer {Porosity = 0.189, Clayness = 0.1, Carbonate = 0.86, Amplitude = 0.22, Type = 1},
-                     new Layer {Porosity = 0.141, Clayness = 0.078, Carbonate = 0.123, Amplitude = 0.12, Type = 1},
-                     new Layer {Porosity = 0.15, Clayness = 0.095, Carbonate = 0.128, Amplitude = 0.08, Type = 1},
-                     new Layer {Porosity = 0.126, Clayness = 0.401, Carbonate = 0.085, Amplitude = 0.04, Type = 2},
-                     new Layer {Porosity = 0.109, Clayness = 0.156, Carbonate = 0.179, Amplitude = 0.08, Type = 2},
-                     new Layer {Porosity = 0.095, Clayness = 0.278, Carbonate = 0.124, Amplitude = 0.05, Type = 2},
-                     new Layer {Porosity = 0.156, Clayness = 0.124, Carbonate = 0.09, Amplitude = 0.17, Type = 1},
-                     new Layer {Porosity = 0.178, Clayness = 0.167, Carbonate = 0.075, Amplitude = 0.05, Type = 1},
-                     new Layer {Porosity = 0.107, Clayness = 0.222, Carbonate = 0.119, Amplitude = 0.14, Type = 1},
-                     new Layer {Porosity = 0.115, Clayness = 0.174, Carbonate = 0.182, Amplitude = 0.07, Type = 1},
-                     new Layer {Porosity = 0.126, Clayness = 0.151, Carbonate = 0.144, Amplitude = 0.1, Type = 1},
-                     new Layer {Porosity = 0.088, Clayness = 0.189, Carbonate = 0.25, Amplitude = 0.03, Type = 2},
-                     new Layer {Porosity = 0.12, Clayness = 0.335, Carbonate = 0.086, Amplitude = 0.03, Type = 2},
-                     new Layer {Porosity = 0.09, Clayness = 0.147, Carbonate = 0.197, Amplitude = 0.07, Type = 2},
-                     new Layer {Porosity = 0.085, Clayness = 0.15, Carbonate = 0.224, Amplitude = 0.04, Type = 2}
-                     };
-
-                     for (int i = 0; i < layerAmount; i++)
-                     {
-                         dbLayers.Create(layers[i]);
-                         db.SaveChanges();
-                     }
-
-                     NetworkTypeRepository dbTypes = new NetworkTypeRepository(db);
-                     NetworkType[] types = new NetworkType[typesAmount]
-                     {
-                     new NetworkType {Name = "Supervised leraning", Description = "парам"},
-                     new NetworkType {Name = "Unsupervised leraning", Description = "парам"}
-                     };
-
-                     for (int i = 0; i < typesAmount; i++)
-                     {
-                         dbTypes.Create(types[i]);
-                         db.SaveChanges();
-                     }
-
-                     NeuralNetworkRepository dbNetworks = new NeuralNetworkRepository(db);
-                     NeuralNetwork[] networks = new NeuralNetwork[networkAmount]
-                     {
-                     new NeuralNetwork {Name = "BPN", Description = "param", NetworkTypeId = 1 },
-                     new NeuralNetwork {Name = "LVQ", Description = "param", NetworkTypeId = 2 }
-                     };
-
-                     for (int i = 0; i < networkAmount; i++)
-                     {
-                         dbNetworks.Create(networks[i]);
-                         db.SaveChanges();
-                     }
-
-                     AvailableNetworksRepository dbANet = new AvailableNetworksRepository(db);
-                     AvailableNetwork[] aNetworks = new AvailableNetwork[]
-                     {
-                     new AvailableNetwork {NeuralNetworkId = GetNetworkId("BPN", dbNetworks), TaskId =  GetTaskId("Kerogen", dbTasks)},
-                     new AvailableNetwork {NeuralNetworkId = GetNetworkId("BPN", dbNetworks), TaskId =  GetTaskId("Layer", dbTasks)},
-                     new AvailableNetwork {NeuralNetworkId = GetNetworkId("LVQ", dbNetworks), TaskId =  GetTaskId("Kerogen", dbTasks)},
-                     new AvailableNetwork {NeuralNetworkId = GetNetworkId("LVQ", dbNetworks), TaskId =  GetTaskId("Layer", dbTasks)}
-                     };
-
-                     for (int i = 0; i < aNetworks.Length; i++)
-                     {
-                         dbANet.Create(aNetworks[i]);
-                         db.SaveChanges();
-                     }
-
-                 }*/
-                    /*
-                    if (!roleManager.RoleExists("User"))
+                    // транспорт воєнних частин
+                    MilitaryBaseMachineryRepository dbMilitaryBaseMachineries = new MilitaryBaseMachineryRepository(db);
+                    MilitaryBaseMachinery[] mMachineries = new MilitaryBaseMachinery[]
                     {
-                        var role = new IdentityRole();
-                        role.Name = "User";
-                        roleManager.Create(role);
+                        new MilitaryBaseMachinery { MilitaryBaseId = 1, MachineryId = 1, Amount = 20},
+                        new MilitaryBaseMachinery { MilitaryBaseId = 1, MachineryId = 2, Amount = 19},
+                        new MilitaryBaseMachinery { MilitaryBaseId = 2, MachineryId = 3, Amount = 40},
+                        new MilitaryBaseMachinery { MilitaryBaseId = 2, MachineryId = 4, Amount = 35},
+                        new MilitaryBaseMachinery { MilitaryBaseId = 3, MachineryId = 5, Amount = 5},
+                        new MilitaryBaseMachinery { MilitaryBaseId = 3, MachineryId = 6, Amount = 8}
+                    };
+
+                    for (int i = 0; i < mMachineries.Length; i++)
+                    {
+                        dbMilitaryBaseMachineries.Create(mMachineries[i]);
+                        db.SaveChanges();
                     }
 
+                    // озброєння воєнних частин
+                    MilitaryBaseWeaponryRepository dbMilitaryBaseWeaponries = new MilitaryBaseWeaponryRepository(db);
+                    MilitaryBaseWeaponry[] mWeaponries = new MilitaryBaseWeaponry[]
+                    {
+                        new MilitaryBaseWeaponry { MilitaryBaseId = 1, WeaponryId = 1, Amount = 150},
+                        new MilitaryBaseWeaponry { MilitaryBaseId = 1, WeaponryId = 2, Amount = 200},
+                        new MilitaryBaseWeaponry { MilitaryBaseId = 1, WeaponryId = 3, Amount = 259},
+                        new MilitaryBaseWeaponry { MilitaryBaseId = 2, WeaponryId = 4, Amount = 167},
+                        new MilitaryBaseWeaponry { MilitaryBaseId = 2, WeaponryId = 5, Amount = 180},
+                        new MilitaryBaseWeaponry { MilitaryBaseId = 2, WeaponryId = 6, Amount = 196},
+                        new MilitaryBaseWeaponry { MilitaryBaseId = 3, WeaponryId = 7, Amount = 207},
+                        new MilitaryBaseWeaponry { MilitaryBaseId = 3, WeaponryId = 8, Amount = 140},
+                    };
 
-                    db.SaveChanges();*/
+                    for (int i = 0; i < mMachineries.Length; i++)
+                    {
+                        dbMilitaryBaseMachineries.Create(mMachineries[i]);
+                        db.SaveChanges();
+                    }
+
+                    // роти
+                    SquadRepository dbSquads = new SquadRepository(db);
+                    Squad[] squads = new Squad[]
+                    {
+                        new Squad { Number = 1, MilitaryBaseId = 1 },
+                        new Squad { Number = 2, MilitaryBaseId = 1 },
+                        new Squad { Number = 3, MilitaryBaseId = 2 },
+                        new Squad { Number = 4, MilitaryBaseId = 2 },
+                        new Squad { Number = 5, MilitaryBaseId = 3 },
+                        new Squad { Number = 6, MilitaryBaseId = 3 },
+                    };
+
+                    for (int i = 0; i < squads.Length; i++)
+                    {
+                        dbSquads.Create(squads[i]);
+                        db.SaveChanges();
+                    }
+
+                    // взводи
+                    TroopRepository dbTroops = new TroopRepository(db);
+                    Troop[] troops = new Troop[]
+                    {
+                        new Troop { Number = 1, SquadId = 1},
+                        new Troop { Number = 2, SquadId = 2},
+                        new Troop { Number = 3, SquadId = 3},
+                        new Troop { Number = 4, SquadId = 4},
+                        new Troop { Number = 5, SquadId = 5},
+                        new Troop { Number = 6, SquadId = 6}
+                    };
+
+                    for (int i = 0; i < troops.Length; i++)
+                    {
+                        dbTroops.Create(troops[i]);
+                        db.SaveChanges();
+                    }
+
+                    // відділи
+                    DepartmentRepository dbDepartments = new DepartmentRepository(db);
+                    Department[] departments = new Department[]
+                    {
+                        new Department {Number = 1, TroopId = 1 },
+                        new Department {Number = 2, TroopId = 2 },
+                        new Department {Number = 3, TroopId = 3 },
+                        new Department {Number = 4, TroopId = 4 },
+                        new Department {Number = 5, TroopId = 5 },
+                        new Department {Number = 6, TroopId = 6 }
+                    };
+
+                    for (int i = 0; i < departments.Length; i++)
+                    {
+                        dbDepartments.Create(departments[i]);
+                        db.SaveChanges();
+                    }
+                
+                // будівлі
+                BuildingRepository dbBuildings = new BuildingRepository(db);
+                Building[] buildings = new Building[]
+                {
+                    new Building {Square = 200, Height = 20, Purpose = "Житлова будівля", FloorAmount =  6},
+                    new Building {Square = 300, Height = 18, Purpose = "Житлова будівля", FloorAmount =  5},
+                    new Building {Square = 150, Height = 15, Purpose = "Житлова будівля", FloorAmount =  4},
+                    new Building {Square = 200, Height = 10, Purpose = "Ангар", FloorAmount =  1},
+                    new Building {Square = 150, Height = 6, Purpose = "Гараж", FloorAmount =  1},
+                    new Building {Square = 150, Height = 12, Purpose = "Адміністративна будівля", FloorAmount =  3}
+                };
+
+                for (int i = 0; i < buildings.Length; i++)
+                {
+                    dbBuildings.Create(buildings[i]);
+                    db.SaveChanges();
                 }
+
+                // будівлі військових частин
+                MilitaryBaseBuildingRepository dbMBuildings = new MilitaryBaseBuildingRepository(db);
+                MilitaryBaseBuilding[] mBuildings = new MilitaryBaseBuilding[]
+                {
+                    new MilitaryBaseBuilding { MilitaryBaseId = 1, BuildingId = 1, SquadId = 1, TroopId = 0, DepartmentId = 0 },
+                    new MilitaryBaseBuilding { MilitaryBaseId = 1, BuildingId = 1, SquadId = 2, TroopId = 0, DepartmentId = 0 },
+                    new MilitaryBaseBuilding { MilitaryBaseId = 2, BuildingId = 2, SquadId = 3, TroopId = 0, DepartmentId = 0 },
+                    new MilitaryBaseBuilding { MilitaryBaseId = 2, BuildingId = 2, SquadId = 4, TroopId = 0, DepartmentId = 0 },
+                    new MilitaryBaseBuilding { MilitaryBaseId = 3, BuildingId = 3, SquadId = 5, TroopId = 0, DepartmentId = 0 },
+                    new MilitaryBaseBuilding { MilitaryBaseId = 3, BuildingId = 3, SquadId = 6, TroopId = 0, DepartmentId = 0 },
+                    new MilitaryBaseBuilding { MilitaryBaseId = 1, BuildingId = 4, SquadId = 0, TroopId = 0, DepartmentId = 0 },
+                    new MilitaryBaseBuilding { MilitaryBaseId = 2, BuildingId = 5, SquadId = 0, TroopId = 0, DepartmentId = 0 },
+                    new MilitaryBaseBuilding { MilitaryBaseId = 3, BuildingId = 6, SquadId = 0, TroopId = 0, DepartmentId = 0 }
+                };
+
+                for (int i = 0; i < mBuildings.Length; i++)
+                {
+                    dbMBuildings.Create(mBuildings[i]);
+                    db.SaveChanges();
+                }
+
+                // спеціальності
+                SpecialtyRepository dbSpecialties = new SpecialtyRepository(db);
+                Specialty[] specialties = new Specialty[]
+                {
+                    new Specialty { Name = "Кухар" },
+                    new Specialty { Name = "Водій" },
+                    new Specialty { Name = "Механік" },
+                    new Specialty { Name = "Сапер" },
+                    new Specialty { Name = "Оператор котельні" }
+                };
+
+                for (int i = 0; i < specialties.Length; i++)
+                {
+                    dbSpecialties.Create(specialties[i]);
+                    db.SaveChanges();
+                }
+
+                // військовослужбовці
+                ServicemanRepository dbServiceman = new ServicemanRepository(db);
+                Serviceman[] serviceman = new Serviceman[]
+                {
+                    // військовослужбовці генерали - командири армій
+                    new Serviceman { FirstName = "Іван", SecondName = "Іванов", DateOfBirth = Convert.ToDateTime("26.11.1957"), RankId = 1,
+                        ArmyId = 1, CorpId = 0, DivisionId = 0, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Петро", SecondName = "Іванов", DateOfBirth = Convert.ToDateTime("26.11.1965"), RankId = 1,
+                        ArmyId = 2, CorpId = 0, DivisionId = 0, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Василь", SecondName = "Іванов", DateOfBirth = Convert.ToDateTime("26.11.1963"), RankId = 1,
+                        ArmyId = 3, CorpId = 0, DivisionId = 0, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+
+                    // полковники - командири корпусів
+                    new Serviceman { FirstName = "Степан", SecondName = "Петров", DateOfBirth = Convert.ToDateTime("26.11.1978"), RankId = 2,
+                        ArmyId = 1, CorpId = 1, DivisionId = 0, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Іван", SecondName = "Петров", DateOfBirth = Convert.ToDateTime("26.11.1979"), RankId = 2,
+                        ArmyId = 2, CorpId = 2, DivisionId = 0, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Василь", SecondName = "Петров", DateOfBirth = Convert.ToDateTime("26.11.1977"), RankId = 2,
+                        ArmyId = 3, CorpId = 3, DivisionId = 0, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+
+                    // підполковники - командири дивізій
+                    new Serviceman { FirstName = "Василь", SecondName = "Піддубний", DateOfBirth = Convert.ToDateTime("26.11.1980"), RankId = 3,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Максим", SecondName = "Піддубний", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 3,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Володимир", SecondName = "Піддубний", DateOfBirth = Convert.ToDateTime("26.11.1982"), RankId = 3,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 0, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+
+                    // майори - командири військових частин
+                    new Serviceman { FirstName = "Василь", SecondName = "Микитин", DateOfBirth = Convert.ToDateTime("26.11.1983"), RankId = 4,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Олег", SecondName = "Микитин", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 4,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Віктор", SecondName = "Микитин", DateOfBirth = Convert.ToDateTime("26.11.1985"), RankId = 4,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 0, TroopId = 0, DepartmentId = 0  },
+
+                    // лейтенанти - командири рот
+                    new Serviceman { FirstName = "Ігор", SecondName = "Вовк", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 5,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Костянтин", SecondName = "Вовк", DateOfBirth = Convert.ToDateTime("26.11.1985"), RankId = 5,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 2, TroopId = 0, DepartmentId = 0  },
+
+                    new Serviceman { FirstName = "Валерій", SecondName = "Вовк", DateOfBirth = Convert.ToDateTime("26.11.1983"), RankId = 5,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 3, TroopId = 0, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Василь", SecondName = "Вовк", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 5,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 4, TroopId = 0, DepartmentId = 0  },
+
+                    new Serviceman { FirstName = "Микита", SecondName = "Вовк", DateOfBirth = Convert.ToDateTime("26.11.1976"), RankId = 5,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 5, TroopId = 0, DepartmentId = 0  },
+                     new Serviceman { FirstName = "Роман", SecondName = "Вовк", DateOfBirth = Convert.ToDateTime("26.11.1980"), RankId = 5,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 0, DepartmentId = 0  },
+
+                     // сержанти - командири взводів
+                    new Serviceman { FirstName = "Ігор", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 7,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 1, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Костянтин", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1985"), RankId = 7,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 2, TroopId = 2, DepartmentId = 0  },
+
+                    new Serviceman { FirstName = "Валерій", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1983"), RankId = 7,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 3, TroopId = 3, DepartmentId = 0  },
+                    new Serviceman { FirstName = "Василь", SecondName = "Аентонов", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 7,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 4, TroopId = 4, DepartmentId = 0  },
+
+                    new Serviceman { FirstName = "Микита", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1976"), RankId = 7,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 5, TroopId = 5, DepartmentId = 0  },
+                     new Serviceman { FirstName = "Роман", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1980"), RankId = 7,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 6, DepartmentId = 0  },
+
+                      // єфрейтори - командири відділів
+                    new Serviceman { FirstName = "Ігор", SecondName = "Гаврилів", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 9,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 1, DepartmentId = 1  },
+                    new Serviceman { FirstName = "Костянтин", SecondName = "Гаврилів", DateOfBirth = Convert.ToDateTime("26.11.1985"), RankId = 9,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 2, TroopId = 2, DepartmentId = 2  },
+
+                    new Serviceman { FirstName = "Валерій", SecondName = "Гаврилів", DateOfBirth = Convert.ToDateTime("26.11.1983"), RankId = 9,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 3, TroopId = 3, DepartmentId = 3  },
+                    new Serviceman { FirstName = "Василь", SecondName = "Гаврилів", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 9,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 4, TroopId = 4, DepartmentId = 4  },
+
+                    new Serviceman { FirstName = "Микита", SecondName = "Гаврилів", DateOfBirth = Convert.ToDateTime("26.11.1976"), RankId = 9,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 5, TroopId = 5, DepartmentId = 5  },
+                     new Serviceman { FirstName = "Роман", SecondName = "Гаврилів", DateOfBirth = Convert.ToDateTime("26.11.1980"), RankId = 9,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 6, DepartmentId = 6  },
+
+                     // рядові
+                    new Serviceman { FirstName = "Ігор", SecondName = "Якимів", DateOfBirth = Convert.ToDateTime("26.11.1993"), RankId = 10,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 1, DepartmentId = 1  },
+                    new Serviceman { FirstName = "Костянтин", SecondName = "Якимів", DateOfBirth = Convert.ToDateTime("26.11.1996"), RankId = 10,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 2, TroopId = 2, DepartmentId = 2  },
+
+                    new Serviceman { FirstName = "Валерій", SecondName = "Якимів", DateOfBirth = Convert.ToDateTime("26.11.1991"), RankId = 10,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 3, TroopId = 3, DepartmentId = 3  },
+                    new Serviceman { FirstName = "Василь", SecondName = "Якимів", DateOfBirth = Convert.ToDateTime("26.11.1995"), RankId = 10,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 4, TroopId = 4, DepartmentId = 4  },
+
+                    new Serviceman { FirstName = "Микита", SecondName = "Якимів", DateOfBirth = Convert.ToDateTime("26.11.1994"), RankId = 10,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 5, TroopId = 5, DepartmentId = 5  },
+                     new Serviceman { FirstName = "Роман", SecondName = "Якимів", DateOfBirth = Convert.ToDateTime("26.11.1996"), RankId = 10,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 6, DepartmentId = 6  },
+
+                      // рядові
+                    new Serviceman { FirstName = "Ігор", SecondName = "Рубашний", DateOfBirth = Convert.ToDateTime("26.11.1993"), RankId = 10,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 1, DepartmentId = 1  },
+                    new Serviceman { FirstName = "Костянтин", SecondName = "Рубашний", DateOfBirth = Convert.ToDateTime("26.11.1992"), RankId = 10,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 2, TroopId = 2, DepartmentId = 2  },
+
+                    new Serviceman { FirstName = "Валерій", SecondName = "Рубашний", DateOfBirth = Convert.ToDateTime("26.11.1995"), RankId = 10,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 3, TroopId = 3, DepartmentId = 3  },
+                    new Serviceman { FirstName = "Василь", SecondName = "Рубашний", DateOfBirth = Convert.ToDateTime("26.11.1997"), RankId = 10,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 4, TroopId = 4, DepartmentId = 4  },
+
+                    new Serviceman { FirstName = "Микита", SecondName = "Рубашний", DateOfBirth = Convert.ToDateTime("26.11.1996"), RankId = 10,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 5, TroopId = 5, DepartmentId = 5  },
+                     new Serviceman { FirstName = "Роман", SecondName = "Рубашний", DateOfBirth = Convert.ToDateTime("26.11.1994"), RankId = 10,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 6, DepartmentId = 6  },
+
+                      // рядові
+                    new Serviceman { FirstName = "Ігор", SecondName = "Понюк", DateOfBirth = Convert.ToDateTime("26.11.1995"), RankId = 10,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 1, DepartmentId = 1  },
+                    new Serviceman { FirstName = "Костянтин", SecondName = "Понюк", DateOfBirth = Convert.ToDateTime("26.11.1993"), RankId = 10,
+                        ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 2, TroopId = 2, DepartmentId = 2  },
+
+                    new Serviceman { FirstName = "Валерій", SecondName = "Понюк", DateOfBirth = Convert.ToDateTime("26.11.1995"), RankId = 10,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 3, TroopId = 3, DepartmentId = 3  },
+                    new Serviceman { FirstName = "Василь", SecondName = "Понюк", DateOfBirth = Convert.ToDateTime("26.11.1992"), RankId = 10,
+                        ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 4, TroopId = 4, DepartmentId = 4  },
+
+                    new Serviceman { FirstName = "Микита", SecondName = "Понюк", DateOfBirth = Convert.ToDateTime("26.11.1991"), RankId = 10,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 5, TroopId = 5, DepartmentId = 5  },
+                     new Serviceman { FirstName = "Рман", SecondName = "Понюк", DateOfBirth = Convert.ToDateTime("26.11.1990"), RankId = 10,
+                        ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 6, DepartmentId = 6  },
+
+                };
+
+                for (int i = 0; i < serviceman.Length; i++)
+                {
+                    dbServiceman.Create(serviceman[i]);
+                    db.SaveChanges();
+                }
+
+                // спеціальності військовослужбовців
+                ServicemanSpecialtyRepository dbSSpecialties = new ServicemanSpecialtyRepository(db);
+                ServicemanSpecialty[] mSpecialties = new ServicemanSpecialty[]
+                {
+                    new ServicemanSpecialty {   ServicemanId = ,  SpecialtyId =  }
+                };
+
+
+
+
+
+            }
         }
 
 

@@ -10,9 +10,9 @@ namespace MilitaryRegion.Models
     {
         // ід
         public int Id { get; set; }
-        // площа
+        // площа, m^2
         public double Square { get; set; }
-        // висота
+        // висота, m
         public double Height { get; set; }
         // призначення
         public string Purpose { get; set; }
