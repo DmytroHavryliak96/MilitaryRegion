@@ -42,7 +42,7 @@ namespace MilitaryRegion.DAO.Repositories
 
         public IEnumerable<Army> GetAll()
         {
-            return db.Armies;
+            return db.Armies.ToList();
         }
 
         public void Update(Army item)
@@ -51,7 +51,10 @@ namespace MilitaryRegion.DAO.Repositories
             if (dbEntry != null)
             {
                 dbEntry.Number = item.Number;
+                dbEntry.ArmyCommanderId = item.ArmyCommanderId;
             }
+
+            db.SaveChanges();
         }
     }
 }

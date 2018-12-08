@@ -51,7 +51,9 @@ namespace MilitaryRegion.DAO.Repositories
             if (dbEntry != null)
             {
                 dbEntry.Number = item.Number;
+                dbEntry.SquadCommanderId = item.SquadCommanderId;
             }
+            db.SaveChanges();
         }
     }
 }

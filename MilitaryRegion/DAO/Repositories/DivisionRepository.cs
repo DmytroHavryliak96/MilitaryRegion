@@ -42,7 +42,7 @@ namespace MilitaryRegion.DAO.Repositories
 
         public IEnumerable<Division> GetAll()
         {
-            return db.Divisions;
+            return db.Divisions.ToList();
         }
 
         public void Update(Division item)
@@ -52,7 +52,9 @@ namespace MilitaryRegion.DAO.Repositories
             {
                 dbEntry.Name = item.Name;
                 dbEntry.Number = item.Number;
+                dbEntry.DivisionCommanderId = item.DivisionCommanderId;
             }
+            db.SaveChanges();
         }
     }
 }

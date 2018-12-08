@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-lighten-2">Домашня сторінка адміністратора</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Сторінка адміністратора розроблена з метою полегшення менеджменту бази даних військового округу</h5>
+            </div>
+            <div class="row center">
+                <a href="@Url.Action("AddTestNetwork", "ManageTestNetworks")" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Створіть тестову мережу</a>
+            </div>
+            <br><br>
+        </div>
+    </div>
+    <div class="parallax"><img src="~/Content/Images/background1.jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                    <h5 class="center">Військові частини</h5>
+                    <p class="light">Перегляньте дані про військові частини округу</p>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                    <h5 class="center">Вхідні дані</h5>
+                    <p class="light">Редагуйте опис доступних задач в системі та змініть вхідні дані для створення мереж</p>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                    <h5 class="center">Нейромережі</h5>
+                    <p class="light">Переглядайте створені користувачами нейромережі та тестові мережі для незареєстрованих користувачів, додавайте нові тестові мережі для всіх користувачів, змінюйте загальний опис мереж, фільтруйте користувачів по мережам</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">З легкістю управляйте даними, а саме додавайте нові записи, редагуйте існуючі, видаляйте неактуальні записи</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="~/Content/Images/background2.jpg" alt="Unsplashed background img 2"></div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h4 class="center">Функціонал адміністратора</h4>
+                <p class="light">Тут адміністратор системи може виконати наступні функції:</p>
+                <div class="collection">
+                    <a href="@Url.Action("ManageMilitaryBases", "Admin")" class="collection-item">Менеджмент військових частин</a>
+                    <a href="@Url.Action("Index", "ManageTasks")" class="collection-item">Менеджмент задач для мереж</a>
+                    <a href="@Url.Action("Index", "ManageNetworks")" class="collection-item">Менеджмент створених нейромереж</a>
+                    <a href="@Url.Action("Index", "ManageTestNetworks")" class="collection-item">Менеджмент тестових нейромереж</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">Лаконічний опис задач дозволить користувачам краще зрозуміти те, для чого вони створюють нейромережі. Спробуйте змінити опис</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="~/Content/Images/background3.jpg" alt="Unsplashed background img 3"></div>
+</div>
+
+
+
+
+
+

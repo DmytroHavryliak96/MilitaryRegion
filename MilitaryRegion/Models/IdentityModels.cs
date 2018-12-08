@@ -83,7 +83,7 @@ namespace MilitaryRegion.Models
                     roleManager.Create(role);
 
                     var user = new ApplicationUser();
-                    user.UserName = "admin";
+                    user.UserName = "admin@gmail.com";
                     user.Email = "admin@gmail.com";
                     user.PhoneNumber = "+380695630697";
 
@@ -467,7 +467,8 @@ namespace MilitaryRegion.Models
                     new Specialty { Name = "Водій" },
                     new Specialty { Name = "Механік" },
                     new Specialty { Name = "Сапер" },
-                    new Specialty { Name = "Оператор котельні" }
+                    new Specialty { Name = "Оператор котельні" },
+                    new Specialty { Name = "Просто військовослужбовець" }
                 };
 
                 for (int i = 0; i < specialties.Length; i++)
@@ -529,7 +530,7 @@ namespace MilitaryRegion.Models
                         ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 0, DepartmentId = 0  },
 
                      // сержанти - командири взводів
-                    new Serviceman { FirstName = "Ігор", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 7,
+                    new Serviceman { FirstName = "Ігор", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 6,
                         ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 1, DepartmentId = 0  },
                     new Serviceman { FirstName = "Костянтин", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1985"), RankId = 7,
                         ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 2, TroopId = 2, DepartmentId = 0  },
@@ -539,11 +540,11 @@ namespace MilitaryRegion.Models
                     new Serviceman { FirstName = "Василь", SecondName = "Аентонов", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 7,
                         ArmyId = 2, CorpId = 2, DivisionId = 2, MilitaryBaseId = 2, SquadId = 4, TroopId = 4, DepartmentId = 0  },
 
-                    new Serviceman { FirstName = "Микита", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1976"), RankId = 7,
+                    new Serviceman { FirstName = "Микита", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1976"), RankId = 8,
                         ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 5, TroopId = 5, DepartmentId = 0  },
-                     new Serviceman { FirstName = "Роман", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1980"), RankId = 7,
+                     new Serviceman { FirstName = "Роман", SecondName = "Антонов", DateOfBirth = Convert.ToDateTime("26.11.1980"), RankId = 8,
                         ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 6, DepartmentId = 0  },
-
+                     //24
                       // єфрейтори - командири відділів
                     new Serviceman { FirstName = "Ігор", SecondName = "Гаврилів", DateOfBirth = Convert.ToDateTime("26.11.1981"), RankId = 9,
                         ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 1, DepartmentId = 1  },
@@ -559,7 +560,7 @@ namespace MilitaryRegion.Models
                         ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 5, TroopId = 5, DepartmentId = 5  },
                      new Serviceman { FirstName = "Роман", SecondName = "Гаврилів", DateOfBirth = Convert.ToDateTime("26.11.1980"), RankId = 9,
                         ArmyId = 3, CorpId = 3, DivisionId = 3, MilitaryBaseId = 3, SquadId = 6, TroopId = 6, DepartmentId = 6  },
-
+                     // 30
                      // рядові
                     new Serviceman { FirstName = "Ігор", SecondName = "Якимів", DateOfBirth = Convert.ToDateTime("26.11.1993"), RankId = 10,
                         ArmyId = 1, CorpId = 1, DivisionId = 1, MilitaryBaseId = 1, SquadId = 1, TroopId = 1, DepartmentId = 1  },
@@ -620,13 +621,199 @@ namespace MilitaryRegion.Models
                 ServicemanSpecialtyRepository dbSSpecialties = new ServicemanSpecialtyRepository(db);
                 ServicemanSpecialty[] mSpecialties = new ServicemanSpecialty[]
                 {
-                    new ServicemanSpecialty {   ServicemanId = ,  SpecialtyId =  }
+                    new ServicemanSpecialty {   ServicemanId = 1,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 2,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 3,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 4,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 5,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 6,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 7,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 8,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 9,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 10,  SpecialtyId = 6},
+                    new ServicemanSpecialty {   ServicemanId = 11,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 12,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 13,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 14,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 15,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 16,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 17,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 18,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 19,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 20,  SpecialtyId = 6},
+                    new ServicemanSpecialty {   ServicemanId = 21,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 22,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 23,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 24,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 25,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 26,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 27,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 28,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 29,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 30,  SpecialtyId = 6},
+                    new ServicemanSpecialty {   ServicemanId = 31,  SpecialtyId =  1},
+                    new ServicemanSpecialty {   ServicemanId = 32,  SpecialtyId =  2},
+                    new ServicemanSpecialty {   ServicemanId = 33,  SpecialtyId =  3},
+                    new ServicemanSpecialty {   ServicemanId = 34,  SpecialtyId =  4},
+                    new ServicemanSpecialty {   ServicemanId = 35,  SpecialtyId =  5},
+                    new ServicemanSpecialty {   ServicemanId = 36,  SpecialtyId =  1},
+                    new ServicemanSpecialty {   ServicemanId = 37,  SpecialtyId =  2},
+                    new ServicemanSpecialty {   ServicemanId = 38,  SpecialtyId =  3},
+                    new ServicemanSpecialty {   ServicemanId = 39,  SpecialtyId =  4},
+                    new ServicemanSpecialty {   ServicemanId = 40,  SpecialtyId = 5},
+                    new ServicemanSpecialty {   ServicemanId = 41,  SpecialtyId =  1},
+                    new ServicemanSpecialty {   ServicemanId = 42,  SpecialtyId =  2},
+                    new ServicemanSpecialty {   ServicemanId = 43,  SpecialtyId =  3},
+                    new ServicemanSpecialty {   ServicemanId = 44,  SpecialtyId =  4},
+                    new ServicemanSpecialty {   ServicemanId = 45,  SpecialtyId =  5},
+                    new ServicemanSpecialty {   ServicemanId = 46,  SpecialtyId =  1},
+                    new ServicemanSpecialty {   ServicemanId = 47,  SpecialtyId =  2},
+                    new ServicemanSpecialty {   ServicemanId = 48,  SpecialtyId =  3},
+                    new ServicemanSpecialty {   ServicemanId = 31,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 32,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 33,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 34,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 35,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 36,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 37,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 38,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 39,  SpecialtyId =  6},
+                    new ServicemanSpecialty {   ServicemanId = 40,  SpecialtyId = 6}
                 };
 
+                for (int i = 0; i < mSpecialties.Length; i++)
+                {
+                    dbSSpecialties.Create(mSpecialties[i]);
+                    db.SaveChanges();
+                }
 
+                // офіцерський склад
+                OfficerRepository dbOfficers = new OfficerRepository(db);
+                Officer[] officers = new Officer[]
+                {
+                    new Officer { ServicemanId = 1, AcademicCompletionDate = Convert.ToDateTime("26.11.1989"), OfficerRankDate = Convert.ToDateTime("26.11.1990") },
+                    new Officer { ServicemanId = 2, AcademicCompletionDate = Convert.ToDateTime("26.11.1989"), OfficerRankDate = Convert.ToDateTime("26.11.1990") },
+                    new Officer { ServicemanId = 3, AcademicCompletionDate = Convert.ToDateTime("26.11.1989"), OfficerRankDate = Convert.ToDateTime("26.11.1990") },
 
+                    new Officer { ServicemanId = 4, AcademicCompletionDate = Convert.ToDateTime("24.10.2000"), OfficerRankDate = Convert.ToDateTime("26.11.2001") },
+                    new Officer { ServicemanId = 5, AcademicCompletionDate = Convert.ToDateTime("24.10.2000"), OfficerRankDate = Convert.ToDateTime("26.11.2001") },
+                    new Officer { ServicemanId = 6, AcademicCompletionDate = Convert.ToDateTime("24.11.2000"), OfficerRankDate = Convert.ToDateTime("26.11.2001") },
 
+                    new Officer { ServicemanId = 7, AcademicCompletionDate = Convert.ToDateTime("15.11.2007"), OfficerRankDate = Convert.ToDateTime("26.11.2007") },
+                    new Officer { ServicemanId = 8, AcademicCompletionDate = Convert.ToDateTime("12.09.2007"), OfficerRankDate = Convert.ToDateTime("26.11.2007") },
+                    new Officer { ServicemanId = 9, AcademicCompletionDate = Convert.ToDateTime("13.11.2007"), OfficerRankDate = Convert.ToDateTime("26.11.2007") },
 
+                    new Officer { ServicemanId = 10, AcademicCompletionDate = Convert.ToDateTime("10.07.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") },
+                    new Officer { ServicemanId = 11, AcademicCompletionDate = Convert.ToDateTime("11.11.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") },
+                    new Officer { ServicemanId = 12, AcademicCompletionDate = Convert.ToDateTime("17.06.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") },
+
+                    new Officer { ServicemanId = 13, AcademicCompletionDate = Convert.ToDateTime("10.07.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") },
+                    new Officer { ServicemanId = 14, AcademicCompletionDate = Convert.ToDateTime("11.11.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") },
+                    new Officer { ServicemanId = 15, AcademicCompletionDate = Convert.ToDateTime("17.06.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") },
+                    new Officer { ServicemanId = 16, AcademicCompletionDate = Convert.ToDateTime("10.07.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") },
+                    new Officer { ServicemanId = 17, AcademicCompletionDate = Convert.ToDateTime("11.11.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") },
+                    new Officer { ServicemanId = 18, AcademicCompletionDate = Convert.ToDateTime("17.06.2008"), OfficerRankDate = Convert.ToDateTime("26.11.2009") }
+                };
+
+                for (int i = 0; i < officers.Length; i++)
+                {
+                    dbOfficers.Create(officers[i]);
+                    db.SaveChanges();
+                }
+
+                // сержантський склад
+                SergeantRepository dbSergeants = new SergeantRepository(db);
+                Sergeant[] sergeants = new Sergeant[]
+                {
+                    new Sergeant { ServicemanId = 19, SergeantRankDate = Convert.ToDateTime("17.06.2015") },
+                    new Sergeant { ServicemanId = 20, SergeantRankDate = Convert.ToDateTime("17.06.2015") },
+                    new Sergeant { ServicemanId = 21, SergeantRankDate = Convert.ToDateTime("16.05.2015") },
+                    new Sergeant { ServicemanId = 22, SergeantRankDate = Convert.ToDateTime("08.08.2015") },
+                    new Sergeant { ServicemanId = 23, SergeantRankDate = Convert.ToDateTime("17.06.2015") },
+                    new Sergeant { ServicemanId = 24, SergeantRankDate = Convert.ToDateTime("23.11.2015") }
+
+                };
+
+                for (int i = 0; i < sergeants.Length; i++)
+                {
+                    dbSergeants.Create(sergeants[i]);
+                    db.SaveChanges();
+                }
+
+                // солдатський склад
+                SoldierRepository dbSoldiers = new SoldierRepository(db);
+                Soldier[] soldiers = new Soldier[]
+                {
+                    new Soldier { ServicemanId = 25, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 26, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 27, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 28, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 29, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 30, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 31, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 32, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 33, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 34, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 35, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 36, ServiceStartDate = Convert.ToDateTime("02.02.2016") },
+                    new Soldier { ServicemanId = 37, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 38, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 39, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 40, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 41, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 42, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 43, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 44, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 45, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 46, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 47, ServiceStartDate = Convert.ToDateTime("17.07.2016") },
+                    new Soldier { ServicemanId = 48, ServiceStartDate = Convert.ToDateTime("17.07.2016") }
+
+                };
+
+                for (int i = 0; i < soldiers.Length; i++)
+                {
+                    dbSoldiers.Create(soldiers[i]);
+                    db.SaveChanges();
+                }
+
+                // оновлення даних про командирів
+                dbArmies.Update(new Army { Id = 1, Number = 1, ArmyCommanderId = 1 });
+                dbArmies.Update(new Army { Id = 2, Number = 2, ArmyCommanderId = 2 });
+                dbArmies.Update(new Army { Id = 3, Number = 3, ArmyCommanderId = 3 });
+
+                dbCorps.Update(new Corp { Id = 1, Number = 1, CorpCommanderId = 4 });
+                dbCorps.Update(new Corp { Id = 2, Number = 2, CorpCommanderId = 5 });
+                dbCorps.Update(new Corp { Id = 3, Number = 3, CorpCommanderId = 6 });
+
+                dbDivisions.Update(new Division { Id = 1, Number = 1, DivisionCommanderId = 7, Name = "Мотострілкова" });
+                dbDivisions.Update(new Division { Id = 2, Number = 2, DivisionCommanderId = 8 , Name = "Десантна"});
+                dbDivisions.Update(new Division { Id = 3, Number = 3, DivisionCommanderId = 9, Name = "Прикордонна"});
+
+                dbMilitaryBases.Update(new MilitaryBase { Id = 1, Name = "Мотострілкова-2T", Number = 1, MilitaryBaseCommanderId = 10 });
+                dbMilitaryBases.Update(new MilitaryBase { Id = 2, Name = "Десантна частина", Number = 2, MilitaryBaseCommanderId = 11 });
+                dbMilitaryBases.Update(new MilitaryBase { Id = 3, Name = "Захід-кордон", Number = 3, MilitaryBaseCommanderId = 12 });
+
+                dbSquads.Update(new Squad { Id = 1, Number = 1, SquadCommanderId = 13 });
+                dbSquads.Update(new Squad { Id = 2, Number = 2, SquadCommanderId = 14 });
+                dbSquads.Update(new Squad { Id = 3, Number = 3, SquadCommanderId = 15});
+                dbSquads.Update(new Squad { Id = 4, Number = 4, SquadCommanderId = 16 });
+                dbSquads.Update(new Squad { Id = 5, Number = 5, SquadCommanderId = 17 });
+                dbSquads.Update(new Squad { Id = 6, Number = 6, SquadCommanderId = 18 });
+
+                dbTroops.Update(new Troop { Id = 1, Number = 1, TroopCommanderId = 19 });
+                dbTroops.Update(new Troop { Id = 2, Number = 2, TroopCommanderId = 20 });
+                dbTroops.Update(new Troop { Id = 3, Number = 3, TroopCommanderId = 21 });
+                dbTroops.Update(new Troop { Id = 4, Number = 4, TroopCommanderId = 22 });
+                dbTroops.Update(new Troop { Id = 5, Number = 5, TroopCommanderId = 23 });
+                dbTroops.Update(new Troop { Id = 6, Number = 6, TroopCommanderId = 24 });
+
+                dbDepartments.Update(new Department { Id = 1, Number = 1, DepartmentCommanderId = 25 });
+                dbDepartments.Update(new Department { Id = 2, Number = 2, DepartmentCommanderId = 26 });
+                dbDepartments.Update(new Department { Id = 3, Number = 3, DepartmentCommanderId = 27 });
+                dbDepartments.Update(new Department { Id = 4, Number = 4, DepartmentCommanderId = 28});
+                dbDepartments.Update(new Department { Id = 5, Number = 5, DepartmentCommanderId = 29 });
+                dbDepartments.Update(new Department { Id = 6, Number = 6, DepartmentCommanderId = 30 });
             }
         }
 

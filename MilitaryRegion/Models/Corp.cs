@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -20,8 +21,9 @@ namespace MilitaryRegion.Models
         public Army Army { get; set; }
 
         // id командира корпусу
-        public int ServicemanId { get; set; }
-        public Serviceman Serviceman { get; set; }
+        //[ForeignKey("Serviceman")]
+        public int CorpCommanderId { get; set; }
+       // public Serviceman Serviceman { get; set; }
 
 
     }

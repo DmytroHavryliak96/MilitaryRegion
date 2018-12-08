@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+@using Microsoft.AspNet.Identity;
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Main Page</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Materialize/css/mateiralize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/Materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="@Url.Action("ManageTypes", "ManageNetworks")">Типи мереж</a></li>
+        <li><a href="@Url.Action("ManageNeuralNetworks", "ManageNetworks")">Доступні мережі</a></li>
+    </ul>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="@Url.Action("Index", "Home")" class="brand-logo">Military Bases</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="@Url.Action("Index", "Admin")">Домашня сторінка</a></li>
+                <li><a href="@Url.Action("ManageMilitaryBases", "Admin")">Військові частини</a></li>
+                <li><a href="@Url.Action("Index", "ManageOfficers")">Офіцери</a></li>
+                <li><a href="@Url.Action("Index", "ManageNetworks")">Створені мережі</a></li>
+                <li><a href="@Url.Action("Index", "ManageTestNetworks")">Тестові мережі</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Меню<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="@Url.Action("Index", "Admin")">Домашня сторінка</a></li>
+                <li><a href="@Url.Action("ManageMilitaryBases", "Admin")">Військові частини</a></li>
+                <li><a href="@Url.Action("Index", "ManageOfficers")">Офіцери</a></li>
+                <li><a href="@Url.Action("Index", "ManageNetworks")">Створені мережі</a></li>
+                <li><a href="@Url.Action("Index", "ManageTestNetworks")">Тестові мережі</a></li>
+                <li><a href="@Url.Action("ManageTypes", "ManageNetworks")">Типи мереж</a></li>
+                <li><a href="@Url.Action("ManageNeuralNetworks", "ManageNetworks")">Доступні мережі</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+
+    <div>
+        @if (TempData["message"] != null)
+        {
+            <div class="Message">@TempData["message"]</div>
+        }
+        @RenderBody()
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="~/Materialize/js/materialize.js"></script>
+        <script src="~/Materialize/js/init.js"></script>
+        <script src="~/Materialize/js/dropdown.js"></script>
+    </div>
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Інформація про виконавця</h5>
+                    <p class="grey-text text-lighten-4">Даний проект розробляється студентом групи ІПм-18-1 для покращення навичок веб-програмування та розв'язання предметно-орієнтованих задач</p>
+
+                </div>
+                <div class="col l6 s12">
+                    <h5 class="white-text">Корисні посилання</h5>
+                    <ul>
+                        <li><a class="white-text" href="@Url.Action("EditUser", "Admin", new { userId = User.Identity.GetUserId()})">1. Редагувати персональні дані</a></li>
+                        <li><a class="white-text" href="@Url.Action("ManageData", "ManageTasks", new {tablename = "Kerogens" })">2. Менеджмент вхідних даних задачі про кероген</a></li>
+                        <li><a class="white-text" href="@Url.Action("ManageData", "ManageTasks", new {tablename = "Layers"})">3. Менеджмент вхідних даних задачі про пласт</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <p>Виконано студентом групи ІПм-18-1 Гавриляком Дмитром</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

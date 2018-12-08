@@ -15,17 +15,17 @@ namespace MilitaryRegion.Models
         public Building Building { get; set; }
         // id військової частини
         public int MilitaryBaseId { get; set; }
-        public MilitaryBase MilitaryBase { get; set; }
+       // public MilitaryBase MilitaryBase { get; set; }
         // id роти
         public int SquadId { get; set; }
-        public Squad Squad { get; set; }
+        //public Squad Squad { get; set; }
         // id взводу
         public int TroopId { get; set; }
-        public Troop Troop { get; set; }
+        //public Troop Troop { get; set; }
 
         // id відділення
         public int DepartmentId {get; set;}
-        public Department Department { get; set; }
+       // public Department Department { get; set; }
 
     }
 }

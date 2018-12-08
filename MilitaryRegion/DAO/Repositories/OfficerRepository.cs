@@ -41,7 +41,7 @@ namespace MilitaryRegion.DAO.Repositories
 
         public IEnumerable<Officer> GetAll()
         {
-            return db.Officers;
+            return db.Officers.ToList();
         }
 
         public void Update(Officer item)

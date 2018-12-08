@@ -23,6 +23,7 @@ namespace MilitaryRegion
 
             NinjectModule militaryModule = new MilitaryRegionModule("DefaultConnection");
             var kernel = new StandardKernel(militaryModule);
+            kernel.Unbind<ModelValidatorProvider>();
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
 
         }

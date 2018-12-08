@@ -50,7 +50,9 @@ namespace MilitaryRegion.DAO.Repositories
             if (dbEntry != null)
             {
                 dbEntry.Number = item.Number;
+                dbEntry.CorpCommanderId = item.CorpCommanderId;
             }
+            db.SaveChanges();
         }
     }
 }

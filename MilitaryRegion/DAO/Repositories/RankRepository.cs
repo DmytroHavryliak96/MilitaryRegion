@@ -41,7 +41,7 @@ namespace MilitaryRegion.DAO.Repositories
 
         public IEnumerable<Rank> GetAll()
         {
-            return db.Ranks;
+            return db.Ranks.ToList();
         }
 
         public void Update(Rank item)

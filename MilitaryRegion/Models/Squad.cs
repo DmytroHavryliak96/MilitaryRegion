@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -18,8 +19,9 @@ namespace MilitaryRegion.Models
         public MilitaryBase MilitaryBase { get; set; }
 
         // id командира роти
-        public int ServicemanId { get; set; }
-        public Serviceman Serviceman { get; set; }
+        //[ForeignKey("Serviceman")]
+        public int SquadCommanderId { get; set; }
+        //public Serviceman Serviceman { get; set; }
 
     }
 }

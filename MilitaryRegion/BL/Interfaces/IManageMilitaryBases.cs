@@ -16,7 +16,13 @@ namespace MilitaryRegion.BL.Interfaces
 
         IEnumerable<MilitaryBaseViewModel> GetMilitaryBasesOfCorp(int corpId);
 
-        IEnumerable<MilitaryBaseViewModel> GetMilitaryBasesOfDivision(int divisionId); 
+        IEnumerable<MilitaryBaseViewModel> GetMilitaryBasesOfDivision(int divisionId);
+
+        IEnumerable<Army> GetAllArmies();
+
+        IEnumerable<Corp> GetAllCorps();
+
+        IEnumerable<Division> GetAllDivisions();
 
     }
 }
