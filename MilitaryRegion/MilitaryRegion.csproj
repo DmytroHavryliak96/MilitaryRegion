@@ -213,14 +213,22 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="BL\Interfaces\IManageMilitaryBases.cs" />
     <Compile Include="BL\Interfaces\IManageOfficers.cs" />
+    <Compile Include="BL\Interfaces\IManageSergeants.cs" />
+    <Compile Include="BL\Interfaces\IManageSoldiers.cs" />
     <Compile Include="BL\Interfaces\IModelMapper.cs" />
     <Compile Include="BL\Services\ManageMilitaryBasesService.cs" />
     <Compile Include="BL\Services\ManageOfficersService.cs" />
+    <Compile Include="BL\Services\ManageSergeantsService.cs" />
+    <Compile Include="BL\Services\ManageSoldiersService.cs" />
     <Compile Include="BL\Services\Mappers\MilitaryBaseMapper.cs" />
     <Compile Include="BL\Services\Mappers\OfficerMapper.cs" />
+    <Compile Include="BL\Services\Mappers\SergeantMapper.cs" />
+    <Compile Include="BL\Services\Mappers\SoldierMapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminController.cs" />
     <Compile Include="Controllers\AdminControllers\OfficersController.cs" />
+    <Compile Include="Controllers\AdminControllers\SergeantsController.cs" />
+    <Compile Include="Controllers\AdminControllers\SoldierController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAO\Interfaces\IRepository.cs" />
@@ -293,6 +301,8 @@
     <Compile Include="Util\MilitaryRegionModule.cs" />
     <Compile Include="ViewModels\MilitaryBaseViewModel.cs" />
     <Compile Include="ViewModels\OfficerViewModel.cs" />
+    <Compile Include="ViewModels\SergeantViewModel.cs" />
+    <Compile Include="ViewModels\SoldierViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -373,6 +383,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\ManageMilitaryBases.cshtml" />
     <Content Include="Views\Officers\Index.cshtml" />
+    <Content Include="Views\Sergeants\Index.cshtml" />
+    <Content Include="Views\Soldier\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

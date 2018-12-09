@@ -27,8 +27,12 @@ namespace MilitaryRegion.Util
             Bind<IUnitOfWork>().To<EFUnitOfWork>().WithConstructorArgument(connectionString);
             Bind<IManageMilitaryBases>().To<ManageMilitaryBasesService>();
             Bind<IManageOfficers>().To<ManageOfficersService>();
+            Bind<IManageSergeants>().To<ManageSergeantsService>();
+            Bind<IManageSoldiers>().To<ManageSoldiersService>();
             Bind<IModelMapper<MilitaryBase, MilitaryBaseViewModel>>().To<MilitaryBaseMapper>();
             Bind<IModelMapper<Officer, OfficerViewModel>>().To<OfficerMapper>();
+            Bind<IModelMapper<Sergeant, SergeantViewModel>>().To<SergeantMapper>();
+            Bind<IModelMapper<Soldier, SoldierViewModel>>().To<SoldierMapper>();
 
 
         }
