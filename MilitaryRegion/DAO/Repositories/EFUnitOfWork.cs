@@ -38,7 +38,9 @@ namespace MilitaryRegion.DAO.Repositories
         private SergeantRepository sergeantRepository;
         private ServicemanRepository servicemanRepository;
         private ServicemanSpecialtyRepository servicemanSpecialtyRepository;
+        private SpecialtyRepository specialtyRepository;
         private SoldierRepository soldierRepository;
+        private SquadRepository squadRepository;
         private TractorRepository tractorRepository;
         private TroopRepository troopRepository;
         private WeaponryRepository weaponryRepository;
@@ -255,6 +257,16 @@ namespace MilitaryRegion.DAO.Repositories
             }
         }
 
+        public IRepository<Specialty> Specialties
+        {
+            get
+            {
+                if (specialtyRepository == null)
+                    specialtyRepository = new SpecialtyRepository(db);
+                return specialtyRepository;
+            }
+        }
+
         public IRepository<Serviceman> Servicemen
         {
             get
@@ -262,6 +274,16 @@ namespace MilitaryRegion.DAO.Repositories
                 if (servicemanRepository == null)
                     servicemanRepository = new ServicemanRepository(db);
                 return servicemanRepository;
+            }
+        }
+
+        public IRepository<Squad> Squads
+        {
+            get
+            {
+                if (squadRepository == null)
+                    squadRepository = new SquadRepository(db);
+                return squadRepository;
             }
         }
 

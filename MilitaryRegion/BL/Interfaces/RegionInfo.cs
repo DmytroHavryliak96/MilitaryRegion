@@ -69,5 +69,42 @@ namespace MilitaryRegion.BL.Interfaces
         {
             return Database.MilitaryBases.Get(baseId).Name;
         }
+
+        public string GetCurrentSpecialty(int specialtyId)
+        {
+            if (specialtyId == 0)
+                return "усі спеціальності";
+            return "спеціальність = " + Database.Specialties.Get(specialtyId).Name;
+        }
+
+        public IEnumerable<Squad> GetAllSquads()
+        {
+            return Database.Squads.GetAll();
+        }
+
+        public IEnumerable<Troop> GetAllTroops()
+        {
+            return Database.Troops.GetAll();
+        }
+
+        public IEnumerable<Department> GetAllDepartments()
+        {
+            return Database.Departments.GetAll();
+        }
+
+        public int GetCurrentSquadNumber(int squadId)
+        {
+            return Database.Squads.Get(squadId).Number;
+        }
+
+        public int GetCurrentTroopNumber(int troopId)
+        {
+            return Database.Troops.Get(troopId).Number;
+        }
+
+        public int GetCurrentDepNumber(int depId)
+        {
+            return Database.Departments.Get(depId).Number;
+        }
     }
 }

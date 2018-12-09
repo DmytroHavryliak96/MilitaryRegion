@@ -29,11 +29,13 @@ namespace MilitaryRegion.Util
             Bind<IManageRanks<OfficerViewModel>>().To<ManageOfficersService>();
             Bind<IManageRanks<SergeantViewModel>>().To<ManageSergeantsService>();
             Bind<IManageRanks<SoldierViewModel>>().To<ManageSoldiersService>();
+            Bind<IManageServiceman>().To<ManageServiceman>();
             Bind<IRegionInfo>().To<RegionInfo>();
             Bind<IModelMapper<MilitaryBase, MilitaryBaseViewModel>>().To<MilitaryBaseMapper>();
             Bind<IModelMapper<Officer, OfficerViewModel>>().To<OfficerMapper>();
             Bind<IModelMapper<Sergeant, SergeantViewModel>>().To<SergeantMapper>();
             Bind<IModelMapper<Soldier, SoldierViewModel>>().To<SoldierMapper>();
+            Bind<IModelMapper<Serviceman, ServicemanViewModel>>().To<ServicemanMapper>();
 
 
         }

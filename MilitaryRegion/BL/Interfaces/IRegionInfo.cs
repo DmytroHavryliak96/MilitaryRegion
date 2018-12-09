@@ -17,7 +17,15 @@ namespace MilitaryRegion.BL.Interfaces
 
         IEnumerable<MilitaryBase> GetAllMilitaryBases();
 
+        IEnumerable<Squad> GetAllSquads();
+
+        IEnumerable<Troop> GetAllTroops();
+
+        IEnumerable<Department> GetAllDepartments();
+
         string GetCurrentRank(int rank);
+
+        string GetCurrentSpecialty(int specialtyId);
 
         int GetCurrentArmyNumber(int armyId);
 
@@ -26,6 +34,12 @@ namespace MilitaryRegion.BL.Interfaces
         string GetCurrentDivisionName (int divId);
 
         string GetCurrentBaseName(int baseId);
+
+        int GetCurrentSquadNumber(int squadId);
+
+        int GetCurrentTroopNumber(int troopId);
+
+        int GetCurrentDepNumber(int depId);
 
         void Dispose();
 

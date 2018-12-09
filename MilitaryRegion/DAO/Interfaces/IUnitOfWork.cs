@@ -31,7 +31,9 @@ namespace MilitaryRegion.DAO.Interfaces
         IRepository<Sergeant> Sergeants { get; }
         IRepository<Serviceman> Servicemen { get; }
         IRepository<ServicemanSpecialty> ServicemanSpecialties { get; }
+        IRepository<Specialty> Specialties { get; }
         IRepository<Soldier> Soldiers { get; }
+        IRepository<Squad> Squads { get; }
         IRepository<Tractor> Tractors { get; }
         IRepository<Troop> Troops { get; }
         IRepository<Weaponry> Weaponry { get; }
