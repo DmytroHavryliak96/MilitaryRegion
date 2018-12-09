@@ -10,7 +10,7 @@ using MilitaryRegion.Models;
 
 namespace MilitaryRegion.BL.Services
 {
-    public class ManageSergeantsService : IManageSergeants
+    public class ManageSergeantsService : IManageRanks<SergeantViewModel>
     {
         private IUnitOfWork Database { get; set; }
         private IModelMapper<Sergeant, SergeantViewModel> mapper;
@@ -21,27 +21,7 @@ namespace MilitaryRegion.BL.Services
             mapper = mp;
         }
 
-        public IEnumerable<Army> GetAllArmies()
-        {
-            return Database.Armies.GetAll();
-        }
-
-        public IEnumerable<Corp> GetAllCorps()
-        {
-            return Database.Corps.GetAll();
-        }
-
-        public IEnumerable<Division> GetAllDivisions()
-        {
-            return Database.Divisions.GetAll();
-        }
-
-        public IEnumerable<MilitaryBase> GetAllMilitaryBases()
-        {
-            return Database.MilitaryBases.GetAll();
-        }
-
-        public IEnumerable<SergeantViewModel> GetAllSergeants(int rankId)
+        public IEnumerable<SergeantViewModel> GetAll(int rankId)
         {
             List<Sergeant> sergeants = new List<Sergeant>();
 
@@ -64,42 +44,35 @@ namespace MilitaryRegion.BL.Services
             return models;
         }
 
-        public string GetCurrentRank(int rank)
+        public IEnumerable<SergeantViewModel> GetRanksOfArmy(int armyId, int rankId)
         {
-            if (rank == 0)
-                return "увесь склад";
-            return "звання = " + Database.Ranks.Get(rank).Name;
-        }
-
-        public IEnumerable<SergeantViewModel> GetSergeantsOfArmy(int armyId, int rankId)
-        {
-            var models = GetAllSergeants(rankId);
+            var models = GetAll(rankId);
             var result = models.Where(o => o.ArmyId == armyId);
             return result;
         }
 
-        public IEnumerable<SergeantViewModel> GetSergeantsOfBases(int baseId, int rankId)
+        public IEnumerable<SergeantViewModel> GetRanksOfBases(int baseId, int rankId)
         {
-            var models = GetAllSergeants(rankId);
+            var models = GetAll(rankId);
             var result = models.Where(o => o.MilitaryBaseId == baseId);
             return result;
         }
 
-        public IEnumerable<SergeantViewModel> GetSergeantsOfCorp(int corpId, int rankId)
+        public IEnumerable<SergeantViewModel> GetRanksOfCorp(int corpId, int rankId)
         {
-            var models = GetAllSergeants(rankId);
+            var models = GetAll(rankId);
             var result = models.Where(o => o.CorpusId == corpId);
             return result;
         }
 
-        public IEnumerable<SergeantViewModel> GetSergeantsOfDivision(int divisionId, int rankId)
+        public IEnumerable<SergeantViewModel> GetRanksOfDivision(int divisionId, int rankId)
         {
-            var models = GetAllSergeants(rankId);
+            var models = GetAll(rankId);
             var result = models.Where(o => o.DivisionId == divisionId);
             return result;
         }
 
-        public IEnumerable<Rank> GetSergeantRanks()
+        public IEnumerable<Rank> GetRanks()
         {
             return Database.Ranks.Find(r => r.Name.Equals("Старшина") || r.Name.Equals("Сержант") || r.Name.Equals("Прапорщик"));
         }

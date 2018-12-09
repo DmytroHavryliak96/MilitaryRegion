@@ -212,10 +212,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="BL\Interfaces\IManageMilitaryBases.cs" />
-    <Compile Include="BL\Interfaces\IManageOfficers.cs" />
-    <Compile Include="BL\Interfaces\IManageSergeants.cs" />
-    <Compile Include="BL\Interfaces\IManageSoldiers.cs" />
+    <Compile Include="BL\Interfaces\IManageRanks.cs" />
     <Compile Include="BL\Interfaces\IModelMapper.cs" />
+    <Compile Include="BL\Interfaces\IRegionInfo.cs" />
+    <Compile Include="BL\Interfaces\RegionInfo.cs" />
     <Compile Include="BL\Services\ManageMilitaryBasesService.cs" />
     <Compile Include="BL\Services\ManageOfficersService.cs" />
     <Compile Include="BL\Services\ManageSergeantsService.cs" />
