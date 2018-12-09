@@ -30,6 +30,7 @@ namespace MilitaryRegion.Util
             Bind<IManageRanks<SergeantViewModel>>().To<ManageSergeantsService>();
             Bind<IManageRanks<SoldierViewModel>>().To<ManageSoldiersService>();
             Bind<IManageServiceman>().To<ManageServiceman>();
+            Bind<IManageDislocation>().To<ManageDislocations>();
             Bind<IChain>().To<Chain>();
             Bind<IRegionInfo>().To<RegionInfo>();
             Bind<IModelMapper<MilitaryBase, MilitaryBaseViewModel>>().To<MilitaryBaseMapper>();

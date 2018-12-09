@@ -31,6 +31,8 @@ namespace MilitaryRegion.BL.Interfaces
 
         IEnumerable<ServicemanViewModel> GetChain(int manId);
 
+        void Dispose();
+
 
     }
 }

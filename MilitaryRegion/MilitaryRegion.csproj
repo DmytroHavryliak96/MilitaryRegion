@@ -212,6 +212,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="BL\Interfaces\IChain.cs" />
+    <Compile Include="BL\Interfaces\IManageDislocation.cs" />
     <Compile Include="BL\Interfaces\IManageMilitaryBases.cs" />
     <Compile Include="BL\Interfaces\IManageRanks.cs" />
     <Compile Include="BL\Interfaces\IManageServiceman.cs" />
@@ -219,12 +220,12 @@
     <Compile Include="BL\Interfaces\IRegionInfo.cs" />
     <Compile Include="BL\Interfaces\RegionInfo.cs" />
     <Compile Include="BL\Services\Chain.cs" />
+    <Compile Include="BL\Services\ManageDislocations.cs" />
     <Compile Include="BL\Services\ManageMilitaryBasesService.cs" />
     <Compile Include="BL\Services\ManageOfficersService.cs" />
     <Compile Include="BL\Services\ManageSergeantsService.cs" />
     <Compile Include="BL\Services\ManageServiceman.cs" />
     <Compile Include="BL\Services\ManageSoldiersService.cs" />
-    <Compile Include="BL\Services\Mappers\ChainMapper.cs" />
     <Compile Include="BL\Services\Mappers\MilitaryBaseMapper.cs" />
     <Compile Include="BL\Services\Mappers\OfficerMapper.cs" />
     <Compile Include="BL\Services\Mappers\SergeantMapper.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="BL\Services\Mappers\SoldierMapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminControllers\DislocationsController.cs" />
     <Compile Include="Controllers\AdminControllers\OfficersController.cs" />
     <Compile Include="Controllers\AdminControllers\SergeantsController.cs" />
     <Compile Include="Controllers\AdminControllers\ServicemanController.cs" />
@@ -395,6 +397,7 @@
     <Content Include="Views\Soldier\Index.cshtml" />
     <Content Include="Views\Serviceman\Index.cshtml" />
     <Content Include="Views\Serviceman\GetChain.cshtml" />
+    <Content Include="Views\Dislocations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -105,5 +105,11 @@ namespace MilitaryRegion.BL.Services
         {
             return chain.GetChain(manId);
         }
+
+        public void Dispose()
+        {
+            Database.Dispose();
+            chain.Dispose();
+        }
     }
 }

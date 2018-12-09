@@ -112,5 +112,15 @@ namespace MilitaryRegion.BL.Interfaces
             var man = Database.Servicemen.Get(manId);
             return man.FirstName + " " + man.SecondName; 
         }
+
+        public IEnumerable<Dislocation> GetAllDislocations()
+        {
+            return Database.Dislocations.GetAll();
+        }
+
+        public string GetCurrentDislocation(int disId)
+        {
+            return Database.Dislocations.Get(disId).City;
+        }
     }
 }

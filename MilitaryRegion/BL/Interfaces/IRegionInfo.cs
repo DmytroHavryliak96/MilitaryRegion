@@ -23,6 +23,8 @@ namespace MilitaryRegion.BL.Interfaces
 
         IEnumerable<Department> GetAllDepartments();
 
+        IEnumerable<Dislocation> GetAllDislocations();
+
         string GetCurrentRank(int rank);
 
         string GetCurrentSpecialty(int specialtyId);
@@ -42,6 +44,8 @@ namespace MilitaryRegion.BL.Interfaces
         int GetCurrentDepNumber(int depId);
 
         string GetCurrentManName(int manId);
+
+        string GetCurrentDislocation(int disId);
 
         void Dispose();
 
