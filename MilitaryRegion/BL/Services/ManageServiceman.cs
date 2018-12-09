@@ -13,11 +13,13 @@ namespace MilitaryRegion.BL.Services
     {
         private IUnitOfWork Database { get; set; }
         private IModelMapper<Serviceman, ServicemanViewModel> mapper;
+        private IChain chain;
 
-        public ManageServiceman(IUnitOfWork db, IModelMapper<Serviceman, ServicemanViewModel> mp)
+        public ManageServiceman(IUnitOfWork db, IModelMapper<Serviceman, ServicemanViewModel> mp, IChain _chain)
         {
             Database = db;
             mapper = mp;
+            chain = _chain;
         }
 
         public IEnumerable<ServicemanViewModel> GetAll(int specialtyId)
@@ -97,6 +99,11 @@ namespace MilitaryRegion.BL.Services
         public IEnumerable<Specialty> GetSpecialties()
         {
             return Database.Specialties.GetAll();
+        }
+
+        public IEnumerable<ServicemanViewModel> GetChain(int manId)
+        {
+            return chain.GetChain(manId);
         }
     }
 }

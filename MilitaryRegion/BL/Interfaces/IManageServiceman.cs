@@ -29,6 +29,8 @@ namespace MilitaryRegion.BL.Interfaces
 
         IEnumerable<Specialty> GetSpecialties();
 
+        IEnumerable<ServicemanViewModel> GetChain(int manId);
+
 
     }
 }

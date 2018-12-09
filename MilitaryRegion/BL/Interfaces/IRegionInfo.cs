@@ -41,6 +41,8 @@ namespace MilitaryRegion.BL.Interfaces
 
         int GetCurrentDepNumber(int depId);
 
+        string GetCurrentManName(int manId);
+
         void Dispose();
 
 

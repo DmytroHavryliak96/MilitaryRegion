@@ -9,6 +9,10 @@ namespace MilitaryRegion.ViewModels
 {
     public class ServicemanViewModel
     {
+        public string CommanderName { get; set; }
+
+        public int CurrentId { get; set; }
+
         public int ServicemanId { get; set; }
 
         public string Name { get; set; }

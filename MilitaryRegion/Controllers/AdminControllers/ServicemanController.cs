@@ -100,5 +100,11 @@ namespace MilitaryRegion.Controllers.AdminControllers
             return View("Index", result);
         }
 
+        public ActionResult GetChain(int manId)
+        {
+            ViewBag.CurrentServiceman = info.GetCurrentManName(manId);
+            return View(service.GetChain(manId));
+        }
+
     }
 }

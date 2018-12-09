@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MilitaryRegion.ViewModels.ServicemanViewModel>
+@using MilitaryRegion.Models
+
+@{
+    ViewBag.Title = "Адміністрування: ланцюг підпорядкованості";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="center">Ланцюг підпорядкованості для : @ViewBag.CurrentServiceman</h3>
+<div class="row">
+    <div class="col s8 offset-s2">
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Order Id</th>
+                    <th>Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Rank</th>
+                    <th>Commander Name</th>
+                    <th>Army Number</th>
+                    <th>Corpus Number</th>
+                    <th>Division Name</th>
+                    <th>Military Base Name</th>
+                    <th>Squad Number</th>
+                    <th>Troop Number</th>
+                    <th>Department Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.CurrentId</td>
+                        <td>@item.Name</td>
+                        <td>@item.DateOfBirth</td>
+                        <td>@item.RankName</td>
+                        <td>@item.CommanderName</td>
+                        <td>@item.ArmyNumber</td>
+                        <td>@item.CorpusNumber</td>
+                        <td>@item.DivisionName</td>
+                        <td>@item.MilitaryBaseName</td>
+                        <td>@item.SquadNumber</td>
+                        <td>@item.TroopNumber</td>
+                        <td>@item.DepartmnetNumber</td>
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+        <a class='btn' href="@Url.Action("Index", "Serviceman")">Повернутись до списку віськовослужбовців</a>
+
+    </div>
+</div>

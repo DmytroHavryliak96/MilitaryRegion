@@ -106,5 +106,11 @@ namespace MilitaryRegion.BL.Interfaces
         {
             return Database.Departments.Get(depId).Number;
         }
+
+        public string GetCurrentManName(int manId)
+        {
+            var man = Database.Servicemen.Get(manId);
+            return man.FirstName + " " + man.SecondName; 
+        }
     }
 }
