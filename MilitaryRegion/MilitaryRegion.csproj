@@ -211,6 +211,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BL\Interfaces\.cs" />
     <Compile Include="BL\Interfaces\IChain.cs" />
     <Compile Include="BL\Interfaces\IManageDislocation.cs" />
     <Compile Include="BL\Interfaces\IManageMilitaryBases.cs" />
@@ -313,6 +314,7 @@
     <Compile Include="ViewModels\SergeantViewModel.cs" />
     <Compile Include="ViewModels\ServicemanViewModel.cs" />
     <Compile Include="ViewModels\SoldierViewModel.cs" />
+    <Compile Include="ViewModels\TechnicViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
