@@ -114,8 +114,8 @@ namespace MilitaryRegion.Models
                     CorpRepository dbCorps = new CorpRepository(db);
                     Corp[] corps = new Corp[] {
                         new Corp { Number = 1, ArmyId = 1 },
-                        new Corp { Number = 2, ArmyId = 1 },
-                        new Corp { Number = 3, ArmyId = 2 }
+                        new Corp { Number = 2, ArmyId = 2 },
+                        new Corp { Number = 3, ArmyId = 3 }
                     };
 
                     for (int i = 0; i < corps.Length; i++)

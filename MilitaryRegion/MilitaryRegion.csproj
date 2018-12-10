@@ -409,7 +409,7 @@
     <Content Include="Views\Serviceman\GetChain.cshtml" />
     <Content Include="Views\Dislocations\Index.cshtml" />
     <Content Include="Views\Technic\Index.cshtml" />
-    <Content Include="Views\Technic\AllPartial.cshtml" />
+    <Content Include="Views\Technic\allPartial.cshtml" />
     <Content Include="Views\Technic\BMPPartial.cshtml" />
     <Content Include="Views\Technic\TractorPartial.cshtml" />
     <Content Include="Views\Technic\MotorTransportPartial.cshtml" />

@@ -55,6 +55,10 @@ namespace MilitaryRegion.BL.Services
                     {
                         return "MotorTransport";
                     }
+                case "all":
+                    {
+                        return "all";
+                    }
                 default:
                     break;
             }
