@@ -211,7 +211,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="BL\Interfaces\.cs" />
+    <Compile Include="BL\Interfaces\ICategoryInfo.cs" />
+    <Compile Include="BL\Interfaces\IManageTechnik.cs" />
     <Compile Include="BL\Interfaces\IChain.cs" />
     <Compile Include="BL\Interfaces\IManageDislocation.cs" />
     <Compile Include="BL\Interfaces\IManageMilitaryBases.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="BL\Interfaces\IModelMapper.cs" />
     <Compile Include="BL\Interfaces\IRegionInfo.cs" />
     <Compile Include="BL\Interfaces\RegionInfo.cs" />
+    <Compile Include="BL\Services\CategoryInfo.cs" />
     <Compile Include="BL\Services\Chain.cs" />
     <Compile Include="BL\Services\ManageDislocations.cs" />
     <Compile Include="BL\Services\ManageMilitaryBasesService.cs" />
@@ -227,11 +229,16 @@
     <Compile Include="BL\Services\ManageSergeantsService.cs" />
     <Compile Include="BL\Services\ManageServiceman.cs" />
     <Compile Include="BL\Services\ManageSoldiersService.cs" />
+    <Compile Include="BL\Services\ManageTechnic.cs" />
+    <Compile Include="BL\Services\Mappers\BMPMapper.cs" />
     <Compile Include="BL\Services\Mappers\MilitaryBaseMapper.cs" />
+    <Compile Include="BL\Services\Mappers\MotorTransportMapper.cs" />
     <Compile Include="BL\Services\Mappers\OfficerMapper.cs" />
     <Compile Include="BL\Services\Mappers\SergeantMapper.cs" />
     <Compile Include="BL\Services\Mappers\ServicemanMapper.cs" />
     <Compile Include="BL\Services\Mappers\SoldierMapper.cs" />
+    <Compile Include="BL\Services\Mappers\TechnicMapper.cs" />
+    <Compile Include="BL\Services\Mappers\TractorMapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminController.cs" />
     <Compile Include="Controllers\AdminControllers\DislocationsController.cs" />
@@ -239,6 +246,7 @@
     <Compile Include="Controllers\AdminControllers\SergeantsController.cs" />
     <Compile Include="Controllers\AdminControllers\ServicemanController.cs" />
     <Compile Include="Controllers\AdminControllers\SoldierController.cs" />
+    <Compile Include="Controllers\AdminControllers\TechnicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAO\Interfaces\IRepository.cs" />
@@ -400,6 +408,11 @@
     <Content Include="Views\Serviceman\Index.cshtml" />
     <Content Include="Views\Serviceman\GetChain.cshtml" />
     <Content Include="Views\Dislocations\Index.cshtml" />
+    <Content Include="Views\Technic\Index.cshtml" />
+    <Content Include="Views\Technic\AllPartial.cshtml" />
+    <Content Include="Views\Technic\BMPPartial.cshtml" />
+    <Content Include="Views\Technic\TractorPartial.cshtml" />
+    <Content Include="Views\Technic\MotorTransportPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

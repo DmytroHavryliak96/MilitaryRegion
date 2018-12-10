@@ -31,14 +31,63 @@ namespace MilitaryRegion.Util
             Bind<IManageRanks<SoldierViewModel>>().To<ManageSoldiersService>();
             Bind<IManageServiceman>().To<ManageServiceman>();
             Bind<IManageDislocation>().To<ManageDislocations>();
+            Bind<IManageTechnik>().To<ManageTechnic>();
+
             Bind<IChain>().To<Chain>();
             Bind<IRegionInfo>().To<RegionInfo>();
+            Bind<ICategoryInfo>().To<CategoryInfo>();
+
             Bind<IModelMapper<MilitaryBase, MilitaryBaseViewModel>>().To<MilitaryBaseMapper>();
             Bind<IModelMapper<Officer, OfficerViewModel>>().To<OfficerMapper>();
             Bind<IModelMapper<Sergeant, SergeantViewModel>>().To<SergeantMapper>();
             Bind<IModelMapper<Soldier, SoldierViewModel>>().To<SoldierMapper>();
             Bind<IModelMapper<Serviceman, ServicemanViewModel>>().To<ServicemanMapper>();
 
+            Bind<Func<string, IModelMapper<MilitaryBaseMachinery, TechnicViewModel>>>().ToMethod(
+               context =>
+               {
+                   return (category =>
+                   {
+                       switch (category)
+                       {
+                           case "all":
+                               return new TechnicMapper();
+                           case "БМП":
+                               return new BMPMapper();
+                           case "Автотранспорт":
+                               return new MotorTransportMapper();
+                           case "Тягач":
+                               return new TractorMapper();
+                           default:
+                               throw new ArgumentException("cannot find specified category of technic");
+                       }
+                   }
+                   );
+               });
+
+         /*   Bind<Func<int, IUnitOfWork, IModelMapper<Machinery, TechnicViewModel>>>().ToMethod(
+               context =>
+               {
+                   return ((type, db) =>
+                   {
+                       var machineries = db.Machineries.Find(m => m.Id == );
+                       var category = 
+                       switch (category)
+                       {
+                           case "all":
+                               return new TechnicMapper();
+                           case "БМП":
+                               return new TechnicMapper();
+                           case "Автотранспорт":
+                               return new TechnicMapper();
+                           case "Тягач":
+                               return new TechnicMapper();
+                           default:
+                               throw new ArgumentException("cannot find specified category of technic");
+                       }
+                   }
+                   );
+               });*/
 
         }
     }

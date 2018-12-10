@@ -180,12 +180,12 @@ namespace MilitaryRegion.Models
                     MachineryRepository dbMachineries = new MachineryRepository(db);
                     Machinery[] machineries = new Machinery[]
                     {
-                        new Machinery { Name = "МАЗ", Model = "537", CrewAmount = 5, Weight = 21.6},
-                        new Machinery { Name = "КрАЗ", Model = "6446", CrewAmount = 3, Weight = 20},
-                        new Machinery {Name = "Bradley", Model = "M2", CrewAmount = 3, Weight = 21.3},
-                        new Machinery {Name = "Stryker", Model = "M1126 ICV", CrewAmount = 2, Weight = 16.47},
-                        new Machinery {Name = "Volkswagen", Model = "Amarok", CrewAmount = 4, Weight = 2.0 },
-                        new Machinery {Name = "УАЗ", Model = "469", CrewAmount = 7, Weight = 1.65 }
+                        new Machinery { Name = "МАЗ", Model = "537", CrewAmount = 5, Weight = 21.6, Category = "Тягач"},
+                        new Machinery { Name = "КрАЗ", Model = "6446", CrewAmount = 3, Weight = 20, Category = "Тягач"},
+                        new Machinery {Name = "Bradley", Model = "M2", CrewAmount = 3, Weight = 21.3, Category = "БМП"},
+                        new Machinery {Name = "Stryker", Model = "M1126 ICV", CrewAmount = 2, Weight = 16.47, Category = "БМП"},
+                        new Machinery {Name = "Volkswagen", Model = "Amarok", CrewAmount = 4, Weight = 2.0, Category = "Автотранспорт"},
+                        new Machinery {Name = "УАЗ", Model = "469", CrewAmount = 7, Weight = 1.65, Category = "Автотранспорт" }
                     };
 
                     for (int i = 0; i < machineries.Length; i++)

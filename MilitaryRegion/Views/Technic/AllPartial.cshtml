@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MilitaryRegion.ViewModels.TechnicViewModel>
+
+<table class="highlight">
+    <thead>
+        <tr>
+            <th>Machinery ID</th>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Category</th>
+            <th>Weight</th>
+            <th>Crew Amount</th>
+            <th>Amount</th>
+            <th>Military Base Name</th>
+            <th>Division Name</th>
+            <th>Corpus Number</th>
+            <th>Army Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Type</td>
+                <td>@item.Model</td>
+                <td>@item.Category</td>
+                <td>@item.Weight</td>
+                <td>@item.CrewAmount</td>
+                <td>@item.Amount</td>
+                <td>@item.MilitaryBaseName</td>  
+                <td>@item.DivisionName</td>
+                <td>@item.CorpusNumber</td>
+                <td>@item.ArmyNumber</td>
+            </tr>
+            }
+    </tbody>
+</table>
+
