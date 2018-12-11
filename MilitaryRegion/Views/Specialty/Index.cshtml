@@ -1,0 +1,78 @@
+﻿@model IEnumerable<MilitaryRegion.ViewModels.SpecialtyViewModel>
+@using MilitaryRegion.Models
+
+@{
+    ViewBag.Title = "Адміністрування: кількість спеціалістів";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="center">Менеджмент спеціалістів</h3>
+<div class="row">
+    <div class="col s8 offset-s2">
+
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Unit</th>
+                    <th>Specialty</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.Unit</td>
+                        <td>@item.Specialty</td>
+                        <td>@item.Amount</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        <a class='btn' href="@Url.Action("Index", "Specialty")">Спеціалісти округу</a>
+
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Фільтр по арміях</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown2' class='dropdown-content'>
+            @foreach (var army in (ViewBag.Armies as List<Army>))
+            {
+                <li><a href="@Url.Action("GetArmy", "Specialty", new { armyId = army.Id})">Army number = @army.Number</a></li>
+            }
+        </ul>
+
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Фільтр по корпусах</a>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown3' class='dropdown-content'>
+            @foreach (var corp in (ViewBag.Corps as List<Corp>))
+            {
+                <li><a href="@Url.Action("GetCorp", "Specialty", new { corpId = corp.Id})">Corp number = @corp.Number</a></li>
+            }
+        </ul>
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown4'>Фільтр по дивізіях</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown4' class='dropdown-content'>
+            @foreach (var division in (ViewBag.Divisions as List<Division>))
+            {
+                <li><a href="@Url.Action("GetDivision", "Specialty", new { divisionId = division.Id})">Division Name = @division.Name</a></li>
+            }
+        </ul>
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown5'>Фільтр по частинах</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown5' class='dropdown-content'>
+            @foreach (var militaryBase in (ViewBag.Bases as List<MilitaryBase>))
+            {
+                <li><a href="@Url.Action("GetBase", "Specialty", new { baseId = militaryBase.Id})">Military Base Name = @militaryBase.Name</a></li>
+            }
+        </ul>
+
+    </div>
+</div>

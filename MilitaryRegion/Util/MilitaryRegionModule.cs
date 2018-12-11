@@ -36,6 +36,7 @@ namespace MilitaryRegion.Util
             Bind<IManageBuilding>().To<ManageBuilding>();
             Bind<IManageWeaponAmount>().To<ManageWeaponryAmount>();
             Bind<IManageMachineryAmount>().To<ManageMachineryAmount>();
+            Bind<IManageSpecialty>().To<ManageSpecialty>();
 
             Bind<IChain>().To<Chain>();
             Bind<IRegionInfo>().To<RegionInfo>();
