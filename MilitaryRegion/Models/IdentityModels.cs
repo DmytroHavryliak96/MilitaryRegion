@@ -240,14 +240,14 @@ namespace MilitaryRegion.Models
                     WeaponryRepository dbWeaponries = new WeaponryRepository(db);
                     Weaponry[] weapons = new Weaponry[]
                     {
-                        new Weaponry {Name = "Сайга", Model = "410", Ammunition = 10, Caliber = 10.25 },
-                        new Weaponry {Name = "Сайга", Model = "MK", Ammunition = 10, Caliber = 5.45 },
-                        new Weaponry {Name = "АКС", Model = "74", Ammunition = 30, Caliber = 5.45 },
-                        new Weaponry {Name = "М", Model = "16", Ammunition = 30, Caliber = 5.56},
-                        new Weaponry {Name = "Гіацинт-С", Model = "2C5", Ammunition = 60, Caliber = 152},
-                        new Weaponry { Name = "МСТА-С", Model = "2С19", Ammunition = 60, Caliber = 152},
-                        new Weaponry { Name = "Вільха", Model = "1", Ammunition = 24, Caliber = 300 },
-                        new Weaponry { Name = "Смерч", Model = "БМ-30", Ammunition = 22, Caliber = 300 }
+                        new Weaponry {Name = "Сайга", Model = "410", Ammunition = 10, Caliber = 10.25, Category = "Карабіни" },
+                        new Weaponry {Name = "Сайга", Model = "MK", Ammunition = 10, Caliber = 5.45, Category = "Карабіни" },
+                        new Weaponry {Name = "АКС", Model = "74", Ammunition = 30, Caliber = 5.45, Category = "Автоматична зброя" },
+                        new Weaponry {Name = "М", Model = "16", Ammunition = 30, Caliber = 5.56, Category = "Автоматична зброя"},
+                        new Weaponry {Name = "Гіацинт-С", Model = "2C5", Ammunition = 60, Caliber = 152, Category = "Артилерія"},
+                        new Weaponry { Name = "МСТА-С", Model = "2С19", Ammunition = 60, Caliber = 152, Category = "Артилерія"},
+                        new Weaponry { Name = "Вільха", Model = "1", Ammunition = 24, Caliber = 300, Category = "Ракетне озброєння"},
+                        new Weaponry { Name = "Смерч", Model = "БМ-30", Ammunition = 22, Caliber = 300, Category = "Ракетне озброєння"}
 
                     };
 
@@ -360,9 +360,9 @@ namespace MilitaryRegion.Models
                         new MilitaryBaseWeaponry { MilitaryBaseId = 3, WeaponryId = 8, Amount = 140},
                     };
 
-                    for (int i = 0; i < mMachineries.Length; i++)
+                    for (int i = 0; i < mWeaponries.Length; i++)
                     {
-                        dbMilitaryBaseMachineries.Create(mMachineries[i]);
+                        dbMilitaryBaseWeaponries.Create(mWeaponries[i]);
                         db.SaveChanges();
                     }
 

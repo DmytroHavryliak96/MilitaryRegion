@@ -32,10 +32,12 @@ namespace MilitaryRegion.Util
             Bind<IManageServiceman>().To<ManageServiceman>();
             Bind<IManageDislocation>().To<ManageDislocations>();
             Bind<IManageTechnik>().To<ManageTechnic>();
+            Bind<IManageWeaponry>().To<ManageWeaponry>();
 
             Bind<IChain>().To<Chain>();
             Bind<IRegionInfo>().To<RegionInfo>();
             Bind<ICategoryInfo>().To<CategoryInfo>();
+            Bind<IWeaponInfo>().To<WeaponryInfo>();
 
             Bind<IModelMapper<MilitaryBase, MilitaryBaseViewModel>>().To<MilitaryBaseMapper>();
             Bind<IModelMapper<Officer, OfficerViewModel>>().To<OfficerMapper>();
@@ -65,29 +67,29 @@ namespace MilitaryRegion.Util
                    );
                });
 
-         /*   Bind<Func<int, IUnitOfWork, IModelMapper<Machinery, TechnicViewModel>>>().ToMethod(
+            Bind<Func<string, IModelMapper<MilitaryBaseWeaponry, WeaponryViewModel>>>().ToMethod(
                context =>
                {
-                   return ((type, db) =>
+                   return (category =>
                    {
-                       var machineries = db.Machineries.Find(m => m.Id == );
-                       var category = 
                        switch (category)
                        {
                            case "all":
-                               return new TechnicMapper();
-                           case "БМП":
-                               return new TechnicMapper();
-                           case "Автотранспорт":
-                               return new TechnicMapper();
-                           case "Тягач":
-                               return new TechnicMapper();
+                               return new WeaponryMapper();
+                           case "Автоматична зброя":
+                               return new AutomaticMapper();
+                           case "Карабіни":
+                               return new CarbineMapper();
+                           case "Ракетне озброєння":
+                               return new MissileMapper();
+                           case "Артилерія":
+                               return new ArtilleryMapper();
                            default:
-                               throw new ArgumentException("cannot find specified category of technic");
+                               throw new ArgumentException("cannot find specified category of weapon");
                        }
                    }
                    );
-               });*/
+               });
 
         }
     }

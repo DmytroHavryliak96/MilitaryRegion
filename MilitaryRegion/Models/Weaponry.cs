@@ -18,5 +18,7 @@ namespace MilitaryRegion.Models
         public int Ammunition { get; set; }
         // калібр, мм
         public double Caliber { get; set; }
+        // category
+        public string Category { get; set; }
     }
 }

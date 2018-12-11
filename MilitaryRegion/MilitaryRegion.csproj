@@ -218,8 +218,10 @@
     <Compile Include="BL\Interfaces\IManageMilitaryBases.cs" />
     <Compile Include="BL\Interfaces\IManageRanks.cs" />
     <Compile Include="BL\Interfaces\IManageServiceman.cs" />
+    <Compile Include="BL\Interfaces\IManageWeaponry.cs" />
     <Compile Include="BL\Interfaces\IModelMapper.cs" />
     <Compile Include="BL\Interfaces\IRegionInfo.cs" />
+    <Compile Include="BL\Interfaces\IWeaponInfo.cs" />
     <Compile Include="BL\Interfaces\RegionInfo.cs" />
     <Compile Include="BL\Services\CategoryInfo.cs" />
     <Compile Include="BL\Services\Chain.cs" />
@@ -230,8 +232,13 @@
     <Compile Include="BL\Services\ManageServiceman.cs" />
     <Compile Include="BL\Services\ManageSoldiersService.cs" />
     <Compile Include="BL\Services\ManageTechnic.cs" />
+    <Compile Include="BL\Services\ManageWeaponry.cs" />
+    <Compile Include="BL\Services\Mappers\ArtilleryMapper.cs" />
+    <Compile Include="BL\Services\Mappers\AutomaticMapper.cs" />
     <Compile Include="BL\Services\Mappers\BMPMapper.cs" />
+    <Compile Include="BL\Services\Mappers\CarbineMapper.cs" />
     <Compile Include="BL\Services\Mappers\MilitaryBaseMapper.cs" />
+    <Compile Include="BL\Services\Mappers\MissileMapper.cs" />
     <Compile Include="BL\Services\Mappers\MotorTransportMapper.cs" />
     <Compile Include="BL\Services\Mappers\OfficerMapper.cs" />
     <Compile Include="BL\Services\Mappers\SergeantMapper.cs" />
@@ -239,6 +246,8 @@
     <Compile Include="BL\Services\Mappers\SoldierMapper.cs" />
     <Compile Include="BL\Services\Mappers\TechnicMapper.cs" />
     <Compile Include="BL\Services\Mappers\TractorMapper.cs" />
+    <Compile Include="BL\Services\Mappers\WeaponryMapper.cs" />
+    <Compile Include="BL\Services\WeaponryInfo.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminController.cs" />
     <Compile Include="Controllers\AdminControllers\DislocationsController.cs" />
@@ -247,6 +256,7 @@
     <Compile Include="Controllers\AdminControllers\ServicemanController.cs" />
     <Compile Include="Controllers\AdminControllers\SoldierController.cs" />
     <Compile Include="Controllers\AdminControllers\TechnicController.cs" />
+    <Compile Include="Controllers\AdminControllers\WeaponryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAO\Interfaces\IRepository.cs" />
@@ -323,6 +333,7 @@
     <Compile Include="ViewModels\ServicemanViewModel.cs" />
     <Compile Include="ViewModels\SoldierViewModel.cs" />
     <Compile Include="ViewModels\TechnicViewModel.cs" />
+    <Compile Include="ViewModels\WeaponryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -413,6 +424,12 @@
     <Content Include="Views\Technic\BMPPartial.cshtml" />
     <Content Include="Views\Technic\TractorPartial.cshtml" />
     <Content Include="Views\Technic\MotorTransportPartial.cshtml" />
+    <Content Include="Views\Weaponry\Index.cshtml" />
+    <Content Include="Views\Weaponry\AutomaticPartial.cshtml" />
+    <Content Include="Views\Weaponry\allPartial.cshtml" />
+    <Content Include="Views\Weaponry\CarbinePartial.cshtml" />
+    <Content Include="Views\Weaponry\MissilePartial.cshtml" />
+    <Content Include="Views\Weaponry\ArtilletyPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
