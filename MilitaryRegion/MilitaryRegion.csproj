@@ -212,6 +212,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="BL\Interfaces\ICategoryInfo.cs" />
+    <Compile Include="BL\Interfaces\IManageBuilding.cs" />
     <Compile Include="BL\Interfaces\IManageTechnik.cs" />
     <Compile Include="BL\Interfaces\IChain.cs" />
     <Compile Include="BL\Interfaces\IManageDislocation.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="BL\Interfaces\RegionInfo.cs" />
     <Compile Include="BL\Services\CategoryInfo.cs" />
     <Compile Include="BL\Services\Chain.cs" />
+    <Compile Include="BL\Services\ManageBuilding.cs" />
     <Compile Include="BL\Services\ManageDislocations.cs" />
     <Compile Include="BL\Services\ManageMilitaryBasesService.cs" />
     <Compile Include="BL\Services\ManageOfficersService.cs" />
@@ -250,6 +252,7 @@
     <Compile Include="BL\Services\WeaponryInfo.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminControllers\BuildingController.cs" />
     <Compile Include="Controllers\AdminControllers\DislocationsController.cs" />
     <Compile Include="Controllers\AdminControllers\OfficersController.cs" />
     <Compile Include="Controllers\AdminControllers\SergeantsController.cs" />
@@ -327,6 +330,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Util\MilitaryRegionModule.cs" />
+    <Compile Include="ViewModels\BuildingViewModel.cs" />
     <Compile Include="ViewModels\MilitaryBaseViewModel.cs" />
     <Compile Include="ViewModels\OfficerViewModel.cs" />
     <Compile Include="ViewModels\SergeantViewModel.cs" />
@@ -430,6 +434,9 @@
     <Content Include="Views\Weaponry\CarbinePartial.cshtml" />
     <Content Include="Views\Weaponry\MissilePartial.cshtml" />
     <Content Include="Views\Weaponry\ArtilletyPartial.cshtml" />
+    <Content Include="Views\Building\Index.cshtml" />
+    <Content Include="Views\Building\OrdinaryPartial.cshtml" />
+    <Content Include="Views\Building\FlagPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

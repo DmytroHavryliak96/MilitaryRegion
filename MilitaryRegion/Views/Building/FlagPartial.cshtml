@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MilitaryRegion.ViewModels.BuildingViewModel>
+
+<table class="highlight">
+    <thead>
+        <tr>
+            <th>Building ID</th>
+            <th>Square</th>
+            <th>Height</th>
+            <th>Purpose</th>
+            <th>Floor Amount</th>
+            <th>Military Base Name</th>
+            <th>Units Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Square</td>
+                <td>@item.Height</td>
+                <td>@item.Purpose</td>
+                <td>@item.FloorAmount</td>
+                <td>@item.MilitaryBaseName</td>
+                <td>@item.UnitsAmount</td>
+            </tr>
+        }
+    </tbody>
+</table>

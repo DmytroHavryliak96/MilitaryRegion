@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MilitaryRegion.ViewModels.BuildingViewModel>
+@using MilitaryRegion.Models
+
+@{
+    ViewBag.Title = "Адміністрування: військові будівлі";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="center">Менеджмент будівель : @ViewBag.CurrentUnit</h3>
+<div class="row">
+    <div class="col s8 offset-s2">
+        @Html.Partial((string)ViewBag.CurrentCategory + "Partial", Model)
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown5'>Фільтр по частинах</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown5' class='dropdown-content'>
+            @foreach (var militaryBase in (ViewBag.Bases as List<MilitaryBase>))
+            {
+                <li><a href="@Url.Action("GetBuildingOfBase", "Building", new { baseId = militaryBase.Id})">Military Base Name = @militaryBase.Name</a></li>
+            }
+        </ul>
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown7'>Фільтр по кількості підрозділів в будівлі</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown7' class='dropdown-content'>
+            <li><a href="@Url.Action("GetCategory", "Building", new { flag = 1})">More than one unit </a></li>
+            <li><a href="@Url.Action("GetCategory", "Building", new { flag = 0})">Without units</a></li>
+            
+        </ul>
+
+        <a class='btn' href="@Url.Action("Index", "Building")">Всі будівлі</a>
+
+    </div>
+</div>
+
+
