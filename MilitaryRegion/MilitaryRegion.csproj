@@ -213,6 +213,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="BL\Interfaces\ICategoryInfo.cs" />
     <Compile Include="BL\Interfaces\IManageBuilding.cs" />
+    <Compile Include="BL\Interfaces\IManageMachineryAmount.cs" />
     <Compile Include="BL\Interfaces\IManageTechnik.cs" />
     <Compile Include="BL\Interfaces\IChain.cs" />
     <Compile Include="BL\Interfaces\IManageDislocation.cs" />
@@ -241,6 +242,7 @@
     <Compile Include="BL\Services\Mappers\AutomaticMapper.cs" />
     <Compile Include="BL\Services\Mappers\BMPMapper.cs" />
     <Compile Include="BL\Services\Mappers\CarbineMapper.cs" />
+    <Compile Include="BL\Services\Mappers\ManageMachineryAmount.cs" />
     <Compile Include="BL\Services\Mappers\MilitaryBaseMapper.cs" />
     <Compile Include="BL\Services\Mappers\MissileMapper.cs" />
     <Compile Include="BL\Services\Mappers\MotorTransportMapper.cs" />
@@ -256,6 +258,7 @@
     <Compile Include="Controllers\AdminControllers\AdminController.cs" />
     <Compile Include="Controllers\AdminControllers\BuildingController.cs" />
     <Compile Include="Controllers\AdminControllers\DislocationsController.cs" />
+    <Compile Include="Controllers\AdminControllers\MAmountController.cs" />
     <Compile Include="Controllers\AdminControllers\OfficersController.cs" />
     <Compile Include="Controllers\AdminControllers\SergeantsController.cs" />
     <Compile Include="Controllers\AdminControllers\ServicemanController.cs" />
@@ -334,6 +337,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Util\MilitaryRegionModule.cs" />
     <Compile Include="ViewModels\BuildingViewModel.cs" />
+    <Compile Include="ViewModels\MachineryAmountViewModel.cs" />
     <Compile Include="ViewModels\MilitaryBaseViewModel.cs" />
     <Compile Include="ViewModels\OfficerViewModel.cs" />
     <Compile Include="ViewModels\SergeantViewModel.cs" />
@@ -442,6 +446,7 @@
     <Content Include="Views\Building\OrdinaryPartial.cshtml" />
     <Content Include="Views\Building\FlagPartial.cshtml" />
     <Content Include="Views\WAmount\Index.cshtml" />
+    <Content Include="Views\MAmount\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

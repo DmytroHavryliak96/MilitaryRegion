@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MilitaryRegion.ViewModels.MachineryAmountViewModel>
+@using MilitaryRegion.Models
+
+@{
+    ViewBag.Title = "Адміністрування: кількість техніки";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="center">Менеджмент техніки</h3>
+<div class="row">
+    <div class="col s8 offset-s2">
+
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Military Base ID</th>
+                    <th>Military Base Name</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.MilitaryBaseId</td>
+                        <td>@item.MilitaryBaseName</td>
+                        <td>@item.MachineryType</td>
+                        <td>@item.Amount</td>
+                        <td>@item.Model</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        <a class='btn' href="@Url.Action("Index", "MAmount")">Техніка всіх військових частин</a>
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown7'>Частини, де к-сть техніки більше 5</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown7' class='dropdown-content'>
+            @foreach (var type in (ViewBag.Types as List<Machinery>))
+            {
+                <li><a href="@Url.Action("GetMore5", "MAmount", new { typeName = type.Name})">Type = @type.Name</a></li>
+            }
+        </ul>
+
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown8'>Частини, де немає даного виду техніки</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown8' class='dropdown-content'>
+            @foreach (var type in (ViewBag.Types as List<Machinery>))
+            {
+                <li><a href="@Url.Action("GetNone", "MAmount", new { typeName = type.Name})">Type = @type.Name</a></li>
+            }
+        </ul>
+
+    </div>
+</div>
