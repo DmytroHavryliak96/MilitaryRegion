@@ -219,6 +219,7 @@
     <Compile Include="BL\Interfaces\IManageMilitaryBases.cs" />
     <Compile Include="BL\Interfaces\IManageRanks.cs" />
     <Compile Include="BL\Interfaces\IManageServiceman.cs" />
+    <Compile Include="BL\Interfaces\IManageWeaponAmount.cs" />
     <Compile Include="BL\Interfaces\IManageWeaponry.cs" />
     <Compile Include="BL\Interfaces\IModelMapper.cs" />
     <Compile Include="BL\Interfaces\IRegionInfo.cs" />
@@ -235,6 +236,7 @@
     <Compile Include="BL\Services\ManageSoldiersService.cs" />
     <Compile Include="BL\Services\ManageTechnic.cs" />
     <Compile Include="BL\Services\ManageWeaponry.cs" />
+    <Compile Include="BL\Services\ManageWeaponryAmount.cs" />
     <Compile Include="BL\Services\Mappers\ArtilleryMapper.cs" />
     <Compile Include="BL\Services\Mappers\AutomaticMapper.cs" />
     <Compile Include="BL\Services\Mappers\BMPMapper.cs" />
@@ -259,6 +261,7 @@
     <Compile Include="Controllers\AdminControllers\ServicemanController.cs" />
     <Compile Include="Controllers\AdminControllers\SoldierController.cs" />
     <Compile Include="Controllers\AdminControllers\TechnicController.cs" />
+    <Compile Include="Controllers\AdminControllers\WAmountController.cs" />
     <Compile Include="Controllers\AdminControllers\WeaponryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -337,6 +340,7 @@
     <Compile Include="ViewModels\ServicemanViewModel.cs" />
     <Compile Include="ViewModels\SoldierViewModel.cs" />
     <Compile Include="ViewModels\TechnicViewModel.cs" />
+    <Compile Include="ViewModels\WeaponryAmountViewModel.cs" />
     <Compile Include="ViewModels\WeaponryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -437,6 +441,7 @@
     <Content Include="Views\Building\Index.cshtml" />
     <Content Include="Views\Building\OrdinaryPartial.cshtml" />
     <Content Include="Views\Building\FlagPartial.cshtml" />
+    <Content Include="Views\WAmount\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
