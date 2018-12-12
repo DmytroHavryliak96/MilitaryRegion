@@ -7,6 +7,7 @@ using MilitaryRegion.BL.Interfaces;
 
 namespace MilitaryRegion.Controllers.AdminControllers
 {
+    [Authorize(Roles = "Admin")]
     public class BaseAmountController : Controller
     {
         private IManageBaseAmount service;

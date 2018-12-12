@@ -78,9 +78,9 @@
                 <div class="col l6 s12">
                     <h5 class="white-text">Корисні посилання</h5>
                     <ul>
-                        <li><a class="white-text" href="@Url.Action("EditUser", "Admin", new { userId = User.Identity.GetUserId()})">1. Переглянути всіх військовослужбовців військового регіону</a></li>
-                        <li><a class="white-text" href="@Url.Action("ManageData", "ManageTasks", new {tablename = "Kerogens" })">2. Переглянути офіцерський склад</a></li>
-                        <li><a class="white-text" href="@Url.Action("ManageData", "ManageTasks", new {tablename = "Layers"})">3. Переглянути сержантський склад</a></li>
+                        <li><a class="white-text" href="@Url.Action("Index", "Serviceman")">1. Переглянути всіх військовослужбовців військового регіону</a></li>
+                        <li><a class="white-text" href="@Url.Action("Index", "Officers")">2. Переглянути офіцерський склад</a></li>
+                        <li><a class="white-text" href="@Url.Action("Index", "Sergeants")">3. Переглянути сержантський склад</a></li>
                     </ul>
                 </div>
             </div>

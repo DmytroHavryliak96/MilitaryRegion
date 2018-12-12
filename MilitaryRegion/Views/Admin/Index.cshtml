@@ -13,7 +13,7 @@
                 <h5 class="header col s12 light">Сторінка адміністратора розроблена з метою полегшення менеджменту бази даних військового округу</h5>
             </div>
             <div class="row center">
-                <a href="@Url.Action("AddTestNetwork", "ManageTestNetworks")" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Test</a>
+                <a href="@Url.Action("ManageMilitaryBases", "Admin")" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Воєнні частини</a>
             </div>
             <br><br>
         </div>
@@ -27,23 +27,23 @@
         <div class="row">
             <div class="col s12 m4">
                 <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
                     <h5 class="center">Військові частини</h5>
-                    <p class="light">Перегляньте дані про військові частини округу</p>
+                    <p class="light">Перегляньте дані про військові частини округу - до якої вони дівізії належать, номер корпусу та армії</p>
                 </div>
             </div>
             <div class="col s12 m4">
                 <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                    <h2 class="center brown-text"><i class="material-icons">group</i></h2>
                     <h5 class="center">Військовослужбовці</h5>
-                    <p class="light">Test</p>
+                    <p class="light">Перегляньте дані про військовослужбовців - їхні звання, персональні дані, ланцюг підпорядкованості</p>
                 </div>
             </div>
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-                    <h5 class="center">Test</h5>
-                    <p class="light">test</p>
+                    <h5 class="center">Озброєння та військова техніка</h5>
+                    <p class="light">Перегляньте дані про військову техніку та озброєння військових частин воєнного округу</p>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
     <div class="section no-pad-bot">
         <div class="container">
             <div class="row center">
-                <h5 class="header col s12 light">test</h5>
+                <h5 class="header col s12 light">Фільтруйте дані на основі доступних фільтрів</h5>
             </div>
         </div>
     </div>
@@ -69,9 +69,9 @@
                 <p class="light">Тут адміністратор системи може виконати наступні функції:</p>
                 <div class="collection">
                     <a href="@Url.Action("ManageMilitaryBases", "Admin")" class="collection-item">Менеджмент військових частин</a>
-                    <a href="@Url.Action("Index", "ManageTasks")" class="collection-item">test</a>
-                    <a href="@Url.Action("Index", "ManageNetworks")" class="collection-item">test</a>
-                    <a href="@Url.Action("Index", "ManageTestNetworks")" class="collection-item">test</a>
+                    <a href="@Url.Action("Index", "Weaponry")" class="collection-item">Менеджмент озброєння</a>
+                    <a href="@Url.Action("Index", "Technic")" class="collection-item">Менеджмент техніки</a>
+                    <a href="@Url.Action("Index", "Serviceman")" class="collection-item">Менеджмент військовослужбовців</a>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
     <div class="section no-pad-bot">
         <div class="container">
             <div class="row center">
-                <h5 class="header col s12 light">test</h5>
+                <h5 class="header col s12 light">З легкістю переключайтесь між запитами за допомогою основного меню</h5>
             </div>
         </div>
     </div>

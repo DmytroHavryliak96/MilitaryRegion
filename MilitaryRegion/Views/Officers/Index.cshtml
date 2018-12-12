@@ -39,13 +39,6 @@
                         <td>@item.DivisionName</td>
                         <td>@item.MilitaryBaseName</td>
 
-                        <td>
-                            @using (Html.BeginForm("DeleteMilitaryBase", "Admin"))
-                            {
-                                @Html.Hidden("baseId", item.ServicemanId)
-                                <input type="submit" value="Видалити" class="waves-effect waves-light btn" />
-                            }
-                        </td>
                     </tr>
                 }
             </tbody>

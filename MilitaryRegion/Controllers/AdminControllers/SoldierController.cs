@@ -8,6 +8,7 @@ using MilitaryRegion.ViewModels;
 
 namespace MilitaryRegion.Controllers.AdminControllers
 {
+    [Authorize(Roles = "Admin")]
     public class SoldierController : Controller
     {
         private IManageRanks<SoldierViewModel> service;

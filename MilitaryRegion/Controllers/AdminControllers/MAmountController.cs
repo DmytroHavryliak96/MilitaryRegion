@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MilitaryRegion.Controllers.AdminControllers
 {
+    [Authorize(Roles = "Admin")]
     public class MAmountController : Controller
     {
         private IManageMachineryAmount service;

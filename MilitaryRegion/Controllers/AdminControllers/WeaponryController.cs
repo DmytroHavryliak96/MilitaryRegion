@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MilitaryRegion.Controllers.AdminControllers
 {
+    [Authorize(Roles = "Admin")]
     public class WeaponryController : Controller
     {
         private IManageWeaponry service;
