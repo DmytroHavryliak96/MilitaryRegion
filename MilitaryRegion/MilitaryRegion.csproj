@@ -212,6 +212,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="BL\Interfaces\ICategoryInfo.cs" />
+    <Compile Include="BL\Interfaces\IManageBaseAmount.cs" />
     <Compile Include="BL\Interfaces\IManageBuilding.cs" />
     <Compile Include="BL\Interfaces\IManageMachineryAmount.cs" />
     <Compile Include="BL\Interfaces\IManageSpecialty.cs" />
@@ -229,6 +230,7 @@
     <Compile Include="BL\Interfaces\RegionInfo.cs" />
     <Compile Include="BL\Services\CategoryInfo.cs" />
     <Compile Include="BL\Services\Chain.cs" />
+    <Compile Include="BL\Services\ManageBaseAmount.cs" />
     <Compile Include="BL\Services\ManageBuilding.cs" />
     <Compile Include="BL\Services\ManageDislocations.cs" />
     <Compile Include="BL\Services\ManageMilitaryBasesService.cs" />
@@ -258,6 +260,7 @@
     <Compile Include="BL\Services\WeaponryInfo.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminControllers\BaseAmountController.cs" />
     <Compile Include="Controllers\AdminControllers\BuildingController.cs" />
     <Compile Include="Controllers\AdminControllers\DislocationsController.cs" />
     <Compile Include="Controllers\AdminControllers\MAmountController.cs" />
@@ -339,6 +342,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Util\MilitaryRegionModule.cs" />
+    <Compile Include="ViewModels\BaseaAmountViewModel.cs" />
     <Compile Include="ViewModels\BuildingViewModel.cs" />
     <Compile Include="ViewModels\MachineryAmountViewModel.cs" />
     <Compile Include="ViewModels\MilitaryBaseViewModel.cs" />
@@ -452,6 +456,7 @@
     <Content Include="Views\WAmount\Index.cshtml" />
     <Content Include="Views\MAmount\Index.cshtml" />
     <Content Include="Views\Specialty\Index.cshtml" />
+    <Content Include="Views\BaseAmount\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
